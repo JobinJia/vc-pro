@@ -1,0 +1,36 @@
+{
+  "name": "@vc-comp/naive-ui",
+  "version": "1.0.04",
+  "description": "",
+  "main": "./dist/vc-naive.js",
+  "types": "./dist/types/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vc-naive.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css"
+    },
+    "./dist/": {
+      "import": "./dist/es/components/"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:naive": "pnpm run clean:naive && pnpm run build:naive-all && pnpm run build:naive-esm",
+    "build:naive-all": "vite build --config vite.naive.ts",
+    "build:naive-esm": "vite build --config vite.naive.esm.ts",
+    "clean:naive": "rimraf dist",
+    "publish:vc-naive-ui": "npm publish --access public",
+    "unpublish:vc-naive-ui": "npm unpublish vc-components --force"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
