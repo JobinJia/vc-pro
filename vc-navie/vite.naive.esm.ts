@@ -65,7 +65,7 @@ export default (): UserConfigExport => {
           // file: (name) =>
           // format: 'es',
         },
-        external: ['vue', 'naive-ui'],
+        external: ['vue', 'vc-navie'],
       }
     }
   }

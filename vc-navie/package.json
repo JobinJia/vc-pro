@@ -1,5 +1,5 @@
 {
-  "name": "@vc-comp/naive-ui",
+  "name": "@vc-comp/vc-naive",
   "version": "1.0.04",
   "description": "",
   "main": "./dist/vc-naive.js",

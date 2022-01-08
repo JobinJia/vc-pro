@@ -52,7 +52,7 @@ export default (): UserConfigExport => {
             vue: 'Vue'
           }
         },
-        external: ['vue','naive-ui'],
+        external: ['vue','vc-navie'],
       }
     }
   }

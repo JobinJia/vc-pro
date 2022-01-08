@@ -1,4 +1,4 @@
-import TestB from "@/naive-ui/components/TestB/TestB.vue";
+import TestB from "@/vc-navie/components/TestB/TestB.vue";
 import type { App, Plugin } from 'vue'
 
 TestB.install = function (app: App) {

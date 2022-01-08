@@ -1,7 +1,7 @@
 import { App } from 'vue'
 
-import TestA from "@/naive-ui/components/TestA";
-import TestB from "@/naive-ui/components/TestB";
+import TestA from "@/vc-navie/components/TestA";
+import TestB from "@/vc-navie/components/TestB";
 
 const components = [
   TestA,

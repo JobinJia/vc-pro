@@ -1,5 +1,5 @@
-declare interface Recordable {
+export interface Recordable {
   [key: string]: any
 }
 
-declare type Nullable<T> = T | null
+export type Nullable<T> = T | null

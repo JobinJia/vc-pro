@@ -1,4 +1,4 @@
 packages:
-  - ant-design-vue/**
-  - naive-ui/**
-  - element-plus/**
+  - vc-ant/**
+  - vc-naive/**
+  - vc-element/**
