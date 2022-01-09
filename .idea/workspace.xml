@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a35765d-06c6-4c7a-9731-99a721b030f3" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/vc-ant/components/VcAntForm/VcAntForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-ant/components/VcAntForm/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/src/env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-docs/vite.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveFormItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/componentMap.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/composables/useNaiveFormModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vc-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vc-view.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/form.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/interface/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/interface/util.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/TestA.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/TestA.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/TestB.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/TestB.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/VcNaiveForm/VcNaiveForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/VcNaiveForm/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/vite.naive.esm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/vite.naive.esm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc-navie/vite.naive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/vite.naive.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +48,7 @@
       <recent name="E:\myself\vc-view\interface" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:naive">
+  <component name="RunManager" selected="npm.build:vc-naive">
     <configuration name="build:naive-all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
       <command value="run" />
@@ -148,8 +108,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:naive" />
         <item itemvalue="npm.build:vc-naive" />
+        <item itemvalue="npm.build:naive" />
         <item itemvalue="npm.type:check" />
         <item itemvalue="npm.build:naive-all" />
         <item itemvalue="npm.dev" />
@@ -168,7 +128,7 @@
       <workItem from="1641659446852" duration="1704000" />
       <workItem from="1641661240308" duration="1077000" />
       <workItem from="1641664054826" duration="1085000" />
-      <workItem from="1641665165666" duration="15856000" />
+      <workItem from="1641665165666" duration="16184000" />
     </task>
     <servers />
   </component>

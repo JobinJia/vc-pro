@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm -C ./vc-docs dev:docs",
     "build:vc-naive": "pnpm -C ./vc-naive build:naive"
