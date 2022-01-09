@@ -1,5 +1,11 @@
 {
   "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "naive-ui": ["node_modules/naive-ui/"]
+    }
+  },
   "include": [
     "components/**/*.ts",
     "components/**/*.d.ts",

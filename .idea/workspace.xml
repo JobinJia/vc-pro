@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a35765d-06c6-4c7a-9731-99a721b030f3" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/vc-naive/.pnpm-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-docs/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-docs/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,17 +53,7 @@
       <recent name="E:\myself\vc-view\interface" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:vc-naive">
-    <configuration name="build:naive-all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:naive-all" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.publish:vc-naive">
     <configuration name="build:naive" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
       <command value="run" />
@@ -89,6 +84,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="publish:vc-naive" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="publish:vc-naive" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="type:check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
       <command value="run" />
@@ -102,17 +107,17 @@
     <list>
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.build:naive" />
-      <item itemvalue="npm.build:naive-all" />
       <item itemvalue="npm.build:vc-naive" />
       <item itemvalue="npm.type:check" />
+      <item itemvalue="npm.publish:vc-naive" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:vc-naive" />
-        <item itemvalue="npm.build:naive" />
-        <item itemvalue="npm.type:check" />
-        <item itemvalue="npm.build:naive-all" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.publish:vc-naive" />
+        <item itemvalue="npm.build:naive" />
+        <item itemvalue="npm.build:vc-naive" />
+        <item itemvalue="npm.type:check" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +133,7 @@
       <workItem from="1641659446852" duration="1704000" />
       <workItem from="1641661240308" duration="1077000" />
       <workItem from="1641664054826" duration="1085000" />
-      <workItem from="1641665165666" duration="16184000" />
+      <workItem from="1641665165666" duration="18301000" />
     </task>
     <servers />
   </component>
