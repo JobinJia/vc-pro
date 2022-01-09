@@ -1,4 +1,4 @@
 packages:
-  - vc-ant/**
   - vc-naive/**
-  - vc-element/**
+  - vc-ant/**
+  - vc-docs/**

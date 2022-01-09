@@ -2,30 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a35765d-06c6-4c7a-9731-99a721b030f3" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-ant/components/VcAntForm/VcAntForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-ant/components/VcAntForm/type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/src/env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-docs/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveFormItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/componentMap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/composables/useNaiveFormModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/props.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vc-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vc-ui.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vc-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vc-view.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/form.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/interface/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestA/TestA.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestA/TestA.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestA/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestA/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestA/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestA/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestB/TestB.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestB/TestB.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestB/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestB/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/TestB/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/TestB/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/vite.naive.esm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/vite.naive.esm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive-ui/vite.naive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-navie/vite.naive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/interface/util.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/TestA.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/TestA.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestA/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestA/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/TestB.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/TestB.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/TestB/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/TestB/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/VcNaiveForm/VcNaiveForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/VcNaiveForm/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/vite.naive.esm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/vite.naive.esm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-navie/vite.naive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/vite.naive.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue3Ts" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,18 +65,96 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23QHKadHWGIuEuaO9Io2yjPzx4k" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/interface" />
     <property name="nodejs_package_manager_path" value="pnpm" />
-    <property name="ts.external.directory.path" value="E:\Program Files\JetBrains\WebStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="ts.external.directory.path" value="E:\myself\vc-view\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myself\vc-view\interface" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build:naive">
+    <configuration name="build:naive-all" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:naive-all" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:naive" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:naive" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:vc-naive" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:vc-naive" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="type:check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="type:check" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build:naive" />
+      <item itemvalue="npm.build:naive-all" />
+      <item itemvalue="npm.build:vc-naive" />
+      <item itemvalue="npm.type:check" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build:naive" />
+        <item itemvalue="npm.build:vc-naive" />
+        <item itemvalue="npm.type:check" />
+        <item itemvalue="npm.build:naive-all" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -58,6 +167,8 @@
       <workItem from="1641659339941" duration="87000" />
       <workItem from="1641659446852" duration="1704000" />
       <workItem from="1641661240308" duration="1077000" />
+      <workItem from="1641664054826" duration="1085000" />
+      <workItem from="1641665165666" duration="15856000" />
     </task>
     <servers />
   </component>
@@ -74,5 +185,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

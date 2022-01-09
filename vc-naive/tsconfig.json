@@ -4,6 +4,8 @@
     "components/**/*.ts",
     "components/**/*.d.ts",
     "components/**/*.tsx",
-    "components/**/*.vue"
+    "components/**/*.vue",
+    "../interface/**/*.ts",
+    "../interface/**/*.d.ts"
   ]
 }

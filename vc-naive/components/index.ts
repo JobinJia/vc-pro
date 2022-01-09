@@ -1,11 +1,13 @@
 import { App } from 'vue'
 
-import TestA from "@/vc-navie/components/TestA";
-import TestB from "@/vc-navie/components/TestB";
+import TestA from "@/vc-naive/components/TestA";
+import TestB from "@/vc-naive/components/TestB";
+import VcNaiveForm from '@/vc-naive/components/VcNaiveForm'
 
 const components = [
   TestA,
-  TestB
+  TestB,
+  VcNaiveForm
 ]
 
 export function install(app: App) {
@@ -21,6 +23,7 @@ export default {
 
 export {
   TestA,
-  TestB
+  TestB,
+  VcNaiveForm
 }
 

@@ -19,7 +19,6 @@ const inputs = inputsArray.reduce((backObj, pkgName) => {
 
 
 export default (): UserConfigExport => {
-  console.log(process.env.arg)
   return {
     publicDir: false,
     resolve: {
@@ -65,7 +64,7 @@ export default (): UserConfigExport => {
           // file: (name) =>
           // format: 'es',
         },
-        external: ['vue', 'vc-navie'],
+        external: ['vue', 'naive-ui', 'lodash-es'],
       }
     }
   }

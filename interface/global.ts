@@ -1,5 +1,3 @@
-export interface Recordable {
-  [key: string]: any
-}
+export type Recordable = Record<string, any>
 
 export type Nullable<T> = T | null

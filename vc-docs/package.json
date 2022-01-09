@@ -1,0 +1,12 @@
+{
+  "name": "@vc-view/vc-docs",
+  "version": "0.0.0",
+  "scripts": {
+    "dev:docs": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vc-view/vc-naive": "workspace:^1.0.0"
+  }
+}

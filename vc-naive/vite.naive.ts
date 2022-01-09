@@ -22,8 +22,9 @@ export default (): UserConfigExport => {
       vueJsx(),
       dts({
         // outputDir: resolve(__dirname, 'types'),
+        // root: resolve(__dirname, '../'),
         outputDir: 'dist/types',
-        exclude: ['node_modules'],
+        exclude: ['node_modules/**', 'naive-ui/**'],
         logDiagnostics: true,
         skipDiagnostics: false,
         // tsConfigFilePath: resolve(__dirname, '../../tsconfig.json'),
@@ -52,7 +53,7 @@ export default (): UserConfigExport => {
             vue: 'Vue'
           }
         },
-        external: ['vue','vc-navie'],
+        external: ['vue','naive-ui', 'lodash-es'],
       }
     }
   }

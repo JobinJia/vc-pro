@@ -1,20 +1,9 @@
 {
-  "name": "@vc-comp/vc-naive",
-  "version": "1.0.04",
+  "name": "@vc-view/vc-naive",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/vc-naive.js",
   "types": "./dist/types/components/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/vc-naive.js"
-    },
-    "./dist/style.css": {
-      "import": "./dist/style.css"
-    },
-    "./dist/": {
-      "import": "./dist/es/components/"
-    }
-  },
   "files": [
     "dist",
     "README.md",
@@ -28,7 +17,13 @@
     "build:naive-esm": "vite build --config vite.naive.esm.ts",
     "clean:naive": "rimraf dist",
     "publish:vc-naive-ui": "npm publish --access public",
-    "unpublish:vc-naive-ui": "npm unpublish vc-components --force"
+    "unpublish:vc-naive-ui": "npm unpublish vc-components --force",
+    "type:check": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.26",
+    "lodash-es": "^4.17.21",
+    "naive-ui": "^2.23.2"
   },
   "keywords": [],
   "author": "",
