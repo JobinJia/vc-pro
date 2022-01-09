@@ -1,11 +1,12 @@
 <script lang="ts">
-import {defineComponent, ref, computed, unref} from 'vue'
+import {defineComponent, ref, computed, unref, Ref} from 'vue'
 import {VcNaiveFormExpose, VcNaiveFormProps} from "./type";
 import {merge, omit} from "lodash-es";
 import {useNaiveFormModel} from "./composables/useNaiveFormModel";
 import {vcNaiveFormProps} from "./props";
 import {NForm, NGrid, NFormItemGi, NSpace} from "naive-ui";
 import VcNaiveFormItem from "./VcNaiveFormItem";
+import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface';
 
 export default defineComponent({
   name: "VcNaiveForm",
@@ -21,7 +22,6 @@ export default defineComponent({
   },
   emits: ['register'],
   setup(props, { attrs, emit }) {
-    console.log(props)
     const innerFormRefEl = ref<HTMLElement & typeof NForm | null>(null)
     // writable props
     const innerProps = ref<Partial<VcNaiveFormProps>>({})
@@ -43,32 +43,38 @@ export default defineComponent({
       }
     })
 
-    const formExpose: VcNaiveFormExpose = {
-      values: modelRef,
-      getFormValue: (): Record<string, any> => {
-        return modelRef.value
-      },
-      updFormProps: (formProps) => {
-        formProps && merge(innerProps.value, formProps)
-      },
-      updFormValue: (updModel: Record<string, any>): void => {
-        modelRef.value = merge(modelRef.value, updModel)
-      },
-      validate: async (args?: any) => {
-        return modelRef.value?.validate(args)
-      },
-      restoreValidation: () => {
-        innerFormRefEl.value?.restoreValidation()
-        resetNaiveFormModel()
-      }
+    function updNaiveFormProps (updProps: Ref<Partial<VcNaiveFormProps>> | Partial<VcNaiveFormProps>) {
+      innerProps.value = merge(innerProps.value, unref(updProps))
     }
+
+    function resetNaiveForm () {
+      innerFormRefEl.value?.restoreValidation()
+      resetNaiveFormModel()
+    }
+
+    async function validate(
+      validateCallback?: FormValidateCallback,
+      shouldRuleBeApplied: ShouldRuleBeApplied = () => true
+    ) {
+      return await innerFormRefEl.value?.validate(validateCallback, shouldRuleBeApplied)
+    }
+
+    const expose = {
+      updNaiveFormProps,
+      resetNaiveForm,
+      validate
+    }
+
+    // todo: 注冊
+    emit('register', expose)
 
     return {
       innerFormRefEl,
       bindNaiveFormProps,
       proxyProps,
       modelRef,
-      ...formExpose
+      // expose
+      ...expose
     }
   }
 })
@@ -93,7 +99,3 @@ export default defineComponent({
     </NGrid>
   </NForm>
 </template>
-
-<style scoped>
-
-</style>

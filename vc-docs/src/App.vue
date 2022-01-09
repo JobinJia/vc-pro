@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  import { NaiveFormSchema } from '@vc-view/vc-naive/components/VcNaiveForm/type'
+  // import { NaiveFormSchema } from '@vc-view/vc-naive/components/VcNaiveForm/type'
+  import {NaiveFormSchema} from "@/vc-naive/components/VcNaiveForm/type";
+
   const formSchemas: NaiveFormSchema[] = [
     {
       field: 'input1',
