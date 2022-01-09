@@ -13,6 +13,7 @@ export type VcNaiveFormComponentName =
   | 'Slot'
 
 import type { FormItemProps, GridItemProps } from "naive-ui";
+import {FormValidateCallback, ShouldRuleBeApplied} from "naive-ui/lib/form/src/interface";
 
 export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>
 
@@ -26,17 +27,17 @@ export interface NaiveFormSchema {
 
 export interface VcNaiveFormProps extends FormProps{
   model?: Record<string, any>
-  schemas: NaiveFormSchema[]
+  schemas?: NaiveFormSchema[]
   gridProps?: Partial<GridProps>
 }
 
 export interface VcNaiveFormExpose {
-  values: Ref<Record<string, any>>
-  updFormProps: (formProps?: Partial<VcNaiveFormProps>) => void
-  getFormValue: () => Record<string, any>
-  updFormValue: (updModel: Record<string, any>) => void
-  validate: (args?: any) => Promise<any>
-  restoreValidation: () => void
+  modelRef: Ref<Record<string, any>>
+  methods: {
+    updNaiveFormProps: (updProps: Ref<Partial<VcNaiveFormProps>> | Partial<VcNaiveFormProps>) => void
+    resetNaiveForm: () => void
+    validate: (validateCallback?: FormValidateCallback, shouldRuleBeApplied?: ShouldRuleBeApplied) => Promise<void>
+  }
 }
 
 export interface VcNaiveFormEmit {

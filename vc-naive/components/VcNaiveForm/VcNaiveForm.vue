@@ -59,14 +59,17 @@ export default defineComponent({
       return await innerFormRefEl.value?.validate(validateCallback, shouldRuleBeApplied)
     }
 
-    const expose = {
-      updNaiveFormProps,
-      resetNaiveForm,
-      validate
+
+    const exposeObject: VcNaiveFormExpose = {
+      modelRef,
+      methods: {
+        updNaiveFormProps,
+        resetNaiveForm,
+        validate
+      }
     }
 
-    // todo: 注冊
-    emit('register', expose)
+    emit('register', exposeObject)
 
     return {
       innerFormRefEl,
@@ -74,7 +77,9 @@ export default defineComponent({
       proxyProps,
       modelRef,
       // expose
-      ...expose
+      updNaiveFormProps,
+      resetNaiveForm,
+      validate
     }
   }
 })

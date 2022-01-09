@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a35765d-06c6-4c7a-9731-99a721b030f3" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/composables/useNaiveForm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/global.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/util.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vc-docs/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-docs/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-docs/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-docs/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/VcNaiveForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/composables/useNaiveForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/composables/useNaiveForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vc-naive/components/VcNaiveForm/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
       <recent name="E:\myself\vc-view\interface" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.publish:vc-naive">
+  <component name="RunManager" selected="npm.build:naive">
     <configuration name="build:naive" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/vc-naive/package.json" />
       <command value="run" />
@@ -115,8 +116,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.publish:vc-naive" />
         <item itemvalue="npm.build:naive" />
+        <item itemvalue="npm.publish:vc-naive" />
         <item itemvalue="npm.build:vc-naive" />
         <item itemvalue="npm.type:check" />
       </list>
@@ -135,7 +136,7 @@
       <workItem from="1641661240308" duration="1077000" />
       <workItem from="1641664054826" duration="1085000" />
       <workItem from="1641665165666" duration="18350000" />
-      <workItem from="1641741313647" duration="1664000" />
+      <workItem from="1641741313647" duration="5971000" />
     </task>
     <servers />
   </component>
