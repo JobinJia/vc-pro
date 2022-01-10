@@ -1,4 +1,4 @@
-import {UserConfigExport} from "vite";
+import { UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
@@ -45,7 +45,7 @@ export default (): UserConfigExport => {
         // entry: 'components/index.ts',
         name: 'vc-components',
         formats: ['es'],
-        fileName: name => `vc-naive.js`
+        fileName: (name) => `vc-naive.js`
       },
       rollupOptions: {
         output: {
@@ -53,7 +53,7 @@ export default (): UserConfigExport => {
             vue: 'Vue'
           }
         },
-        external: ['vue','naive-ui', 'lodash-es'],
+        external: ['vue', 'naive-ui', 'lodash-es']
       }
     }
   }

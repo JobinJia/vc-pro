@@ -3,16 +3,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+  import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: "VcAntForm",
-  setup() {
-    return {}
-  }
-})
+  export default defineComponent({
+    name: 'VcAntForm',
+    setup() {
+      return {}
+    }
+  })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,6 +1,6 @@
 import type { FormProps, GridProps } from 'naive-ui'
 import type { Ref } from 'vue'
-import {Slots} from "vue";
+import { Slots } from 'vue'
 
 export type VcNaiveFormComponentName =
   | 'NInput'
@@ -12,8 +12,8 @@ export type VcNaiveFormComponentName =
   | 'NDatePicker'
   | 'Slot'
 
-import type { FormItemProps, GridItemProps } from "naive-ui";
-import {FormValidateCallback, ShouldRuleBeApplied} from "naive-ui/lib/form/src/interface";
+import type { FormItemProps, GridItemProps } from 'naive-ui'
+import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface'
 
 export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>
 
@@ -25,7 +25,7 @@ export interface NaiveFormSchema {
   formItemProps?: NaiveGridFormItemProps
 }
 
-export interface VcNaiveFormProps extends FormProps{
+export interface VcNaiveFormProps extends FormProps {
   model?: Record<string, any>
   schemas?: NaiveFormSchema[]
   gridProps?: Partial<GridProps>
@@ -34,9 +34,14 @@ export interface VcNaiveFormProps extends FormProps{
 export interface VcNaiveFormExpose {
   modelRef: Ref<Record<string, any>>
   methods: {
-    updNaiveFormProps: (updProps: Ref<Partial<VcNaiveFormProps>> | Partial<VcNaiveFormProps>) => void
+    updNaiveFormProps: (
+      updProps: Ref<Partial<VcNaiveFormProps>> | Partial<VcNaiveFormProps>
+    ) => void
     resetNaiveForm: () => void
-    validate: (validateCallback?: FormValidateCallback, shouldRuleBeApplied?: ShouldRuleBeApplied) => Promise<void>
+    validate: (
+      validateCallback?: FormValidateCallback,
+      shouldRuleBeApplied?: ShouldRuleBeApplied
+    ) => Promise<void>
   }
 }
 

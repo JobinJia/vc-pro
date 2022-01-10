@@ -1,10 +1,10 @@
-import VcNaiveForm from "./VcNaiveForm.vue";
+import VcNaiveForm from './VcNaiveForm.vue'
 import type { App, Plugin } from 'vue'
 
 VcNaiveForm.install = function (app: App) {
-  app.component(VcNaiveForm.name, VcNaiveForm);
-  return app;
-};
+  app.component(VcNaiveForm.name, VcNaiveForm)
+  return app
+}
 
 export * from './type'
 

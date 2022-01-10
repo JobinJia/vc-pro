@@ -1,12 +1,12 @@
-import {UserConfigExport} from "vite";
+import { UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
-import * as fs from "fs";
+import * as fs from 'fs'
 
 const inputDir = resolve(__dirname, './components')
 
-const inputsArray = fs.readdirSync(inputDir).filter(name => {
+const inputsArray = fs.readdirSync(inputDir).filter((name) => {
   const componentDir = resolve(inputDir, name)
   const isDir = fs.lstatSync(componentDir).isDirectory()
   return isDir && fs.readdirSync(componentDir).includes('index.ts')
@@ -16,7 +16,6 @@ const inputs = inputsArray.reduce((backObj, pkgName) => {
   backObj[pkgName] = resolve(__dirname, `./components/${pkgName}/index.ts`)
   return backObj
 }, {})
-
 
 export default (): UserConfigExport => {
   return {
@@ -35,14 +34,9 @@ export default (): UserConfigExport => {
           javascriptEnabled: true
         }
       },
-      postcss: {
-
-      }
+      postcss: {}
     },
-    plugins: [
-      vue(),
-      vueJsx(),
-    ],
+    plugins: [vue(), vueJsx()],
     build: {
       cssCodeSplit: true,
       outDir: 'dist/es',
@@ -64,7 +58,7 @@ export default (): UserConfigExport => {
           // file: (name) =>
           // format: 'es',
         },
-        external: ['vue', 'naive-ui', 'lodash-es'],
+        external: ['vue', 'naive-ui', 'lodash-es']
       }
     }
   }

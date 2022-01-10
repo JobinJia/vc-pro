@@ -1,6 +1,6 @@
-import type {PropType} from "vue";
-import {GridProps} from "naive-ui";
-import {NaiveFormSchema} from "./type";
+import type { PropType } from 'vue'
+import { GridProps } from 'naive-ui'
+import { NaiveFormSchema } from './type'
 import { NForm } from 'naive-ui'
 
 const formProps = NForm.props
@@ -11,14 +11,15 @@ export const vcNaiveFormProps = {
   },
   gridProps: {
     type: Object as PropType<Partial<GridProps>>,
-    default: () => ({
-      cols: 3,
-      collapsed: false,
-      collapsedRows: 1,
-      responsive: 'screen',
-      itemResponsive: false,
-      xGap: 12,
-      yGap: 0
-    } as GridProps)
+    default: () =>
+      ({
+        cols: 3,
+        collapsed: false,
+        collapsedRows: 1,
+        responsive: 'screen',
+        itemResponsive: false,
+        xGap: 12,
+        yGap: 0
+      } as GridProps)
   }
 }
