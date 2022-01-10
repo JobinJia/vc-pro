@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { NaiveFormSchema, VcNaiveFormProps } from '@/vc-naive/components/VcNaiveForm/type'
   import { useNaiveForm } from '@/vc-naive/components/VcNaiveForm'
-  import {ref, shallowRef} from 'vue'
+  import { ref } from 'vue'
   import {
     NButton,
     NCard,
