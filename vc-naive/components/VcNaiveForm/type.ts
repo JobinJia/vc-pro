@@ -22,7 +22,7 @@ export interface NaiveFormSchema {
   component?: VcNaiveFormComponentName
   componentProps?: Record<string, any>
   componentSlots?: (() => Slots | HTMLElement) | Slots
-  formItemProps?: NaiveGridFormItemProps
+  formItemProps?: NaiveGridFormItemProps & Record<string, any>
 }
 
 export interface VcNaiveFormProps extends FormProps {

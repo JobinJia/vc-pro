@@ -1,12 +1,20 @@
-import { ComputedRef, ref, unref, watchEffect } from 'vue'
+import {ComputedRef, effectScope, onScopeDispose, ref, unref, watchEffect} from 'vue'
 import { VcNaiveFormProps } from '../type'
 import { merge } from 'lodash-es'
 
 export function useNaiveFormModel(props: ComputedRef<VcNaiveFormProps>) {
   const modelRef = ref<Record<string, any>>({})
 
-  watchEffect(() => {
-    generateModel()
+  const scope = effectScope()
+
+  scope.run(() => {
+    watchEffect(() => {
+      generateModel()
+    })
+  })
+
+  onScopeDispose(() => {
+    scope.stop()
   })
 
   function generateModel() {
