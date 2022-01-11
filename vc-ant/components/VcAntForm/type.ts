@@ -1,9 +1,7 @@
-// import {BaseFormSchema} from "@/interface/form";
-// import {FormProps, RowProps} from "ant-design-vue";
-// import {Recordable} from "@/interface/global";
-// import {Ref} from "vue";
-//
-// export type VcNaiveFormComponentName =
+import { FormProps, InputProps, SelectProps } from 'ant-design-vue'
+import { Ref } from 'vue'
+
+// export type VcAntFormComponentName =
 //   | 'AInput'
 //   | 'ASelect'
 //   | 'ARadio'
@@ -11,16 +9,31 @@
 //   | 'ACheckbox'
 //   | 'ADatePicker'
 //   | 'Slot'
-//
-//
-// export interface NaiveFormSchema extends BaseFormSchema {}
-//
-// export interface VcNaiveFormProps extends FormProps{
+
+export interface VcAntRunTimeComponentType {
+  AInput: InputProps
+  ASelect: SelectProps
+}
+
+export type VcAntFormComponentName = keyof VcAntRunTimeComponentType
+
+export type ComponentProps<T> = T extends VcAntFormComponentName
+  ? VcAntRunTimeComponentType[T]
+  : never
+
+export interface AntFormSchema {
+  field: string
+  component: VcAntFormComponentName
+  formItemProps: FormProps
+  componentProps: ComponentProps<VcAntFormComponentName>
+}
+
+// export interface VcNaiveFormProps extends FormProps {
 //   model?: Recordable
-//   schemas?: NaiveFormSchema[]
+//   schemas?: AntFormSchema[]
 //   gridProps?: Partial<GridProps>
 // }
-//
+
 // export interface VcNaiveFormExpose {
 //   values: Ref<Recordable>
 //   updFormProps: (formProps?: Partial<VcNaiveFormProps>) => void
@@ -29,7 +42,7 @@
 //   validate: (args?: any) => Promise<any>
 //   restoreValidation: () => void
 // }
-//
+
 // export interface VcNaiveFormEmit {
 //   (e: 'register-form', expose?: VcNaiveFormExpose): void
 // }

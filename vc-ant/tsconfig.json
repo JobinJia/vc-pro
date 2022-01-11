@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "naive-ui": ["node_modules/ant-design-vue/"]
+    }
+  },
+  "include": [
+    "components/**/*.ts",
+    "components/**/*.d.ts",
+    "components/**/*.tsx",
+    "components/**/*.vue",
+    "../interface/**/*.ts",
+    "../interface/**/*.d.ts"
+  ]
+}
