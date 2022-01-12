@@ -15,49 +15,40 @@ import type {
   DatePickerProps
 } from 'naive-ui'
 
-export interface VcNaiveRunTimeComponentType {
-  NInput: InputProps
-  NSelect: SelectProps
-  NRadio: RadioProps
-  NColorPicker: ColorPickerProps
-  NCheckbox: CheckboxProps
-  NDatePicker: DatePickerProps
-  Slot: Slots
+export type NotNull<T> = T extends null | undefined ? never : T
+
+export interface VcNaiveFormComponentMap {
+  NInput: InputProps | NotNull<Record<string, any>>
+  NSelect: SelectProps | Record<string, any>
+  NRadio: RadioProps | Record<string, any>
+  NColorPicker: ColorPickerProps | Record<string, any>
+  NCheckbox: CheckboxProps | Record<string, any>
+  NDatePicker: DatePickerProps | Record<string, any>
+  Slot: () => Slots
 }
-
-export type VcNaiveFormComponentName =
-  | 'NInput'
-  | 'NSelect'
-  | 'NRadio'
-  | 'NSwitch'
-  | 'NColorPicker'
-  | 'NCheckbox'
-  | 'NDatePicker'
-  | 'Slot'
-
-// export type VcNaiveFormComponentName = keyof VcNaiveRunTimeComponentType
 
 export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>
 
-// export type VcNaiveComponentProps<T> = T extends VcNaiveFormComponentName
-//   ? VcNaiveRunTimeComponentType[T]
-//   : never
-// export type VcNaiveComponentProps<T = VcNaiveRunTimeComponentType> = {
-//   [P in keyof T]: P
-// }
+export type VcNaiveFormComponentName = keyof VcNaiveFormComponentMap
 
-export interface NaiveFormSchema {
+export interface NaiveFormSchema<Name extends VcNaiveFormComponentName> {
   field: string
   component?: VcNaiveFormComponentName
-  // componentProps?: VcNaiveComponentProps<VcNaiveFormComponentName>
-  componentProps?: { [key: string]: any }
+  componentProps?: Record<string, any> | VcNaiveFormComponentMap[Name]
+  // componentProps?: { [key: string]: any }
   componentSlots?: (() => Slots | HTMLElement) | Slots
   formItemProps?: NaiveGridFormItemProps & Record<string, any>
 }
 
+export function defineSchema<T extends VcNaiveFormComponentName>(schema: NaiveFormSchema<T>) {
+  return schema
+}
+
+export type NaiveFormSchemas = typeof defineSchema[]
+
 export interface VcNaiveFormProps extends FormProps {
   model?: Record<string, any>
-  schemas?: NaiveFormSchema[]
+  schemas?: NaiveFormSchemas
   gridProps?: Partial<GridProps>
 }
 

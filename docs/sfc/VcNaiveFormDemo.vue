@@ -1,5 +1,9 @@
 <script setup lang="ts">
-  import { NaiveFormSchema } from '@/vc-naive/components/VcNaiveForm/type'
+  import {
+    NaiveFormSchema,
+    NaiveFormSchemas,
+    defineSchema
+  } from '@/vc-naive/components/VcNaiveForm/type'
   import { useNaiveForm } from '@/vc-naive/components/VcNaiveForm'
   import { ref } from 'vue'
   import {
@@ -14,33 +18,35 @@
     NMessageProvider
   } from 'naive-ui'
   const rPasswordFormItemRef = ref<any>({})
-  const schemas: NaiveFormSchema[] = [
-    {
+  const schemas = [
+    defineSchema({
       field: 'input',
       component: 'NInput',
       formItemProps: {
         label: 'NInput'
+      },
+      componentProps: {
       }
-    },
-    {
+    }),
+    defineSchema({
       field: 'age',
       component: 'NInput',
       formItemProps: {
         label: '年龄'
       }
-    },
-    {
+    }),
+    defineSchema({
       field: 'password',
       component: 'NInput',
       formItemProps: {
         label: '密码'
       },
       componentProps: {
-        'on-input': handlePasswordInput,
+        onInput: handlePasswordInput,
         type: 'password'
       }
-    },
-    {
+    }),
+    defineSchema({
       field: 'reenteredPassword',
       component: 'NInput',
       formItemProps: {
@@ -56,7 +62,7 @@
           return !values.password
         }
       }
-    },
+    }),
     {
       field: 'select',
       component: 'NSelect',
