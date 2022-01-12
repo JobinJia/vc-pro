@@ -1,6 +1,6 @@
 {
   "name": "@vc-view/vc-naive",
-  "version": "1.0.03",
+  "version": "1.0.04",
   "description": "",
   "main": "./dist/vc-naive.js",
   "types": "./dist/types/components/index.d.ts",
@@ -29,7 +29,7 @@
     "clean:naive": "rimraf dist",
     "publish:vc-naive": "npm publish --access public",
     "unpublish:vc-naive": "npm unpublish vc-view --force",
-    "type:check": "vue-tsc --noEmit"
+    "tsc:naive": "vue-tsc --noEmit"
   },
   "peerDependencies": {
     "vue": "^3.2.26",

@@ -60,4 +60,3 @@
     <button @click="modelRef1.input2 = Math.random().toString(32)">FORM2</button>
   </div>
 </template>
-

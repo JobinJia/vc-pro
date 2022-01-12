@@ -2,6 +2,29 @@ import type { FormProps, GridProps } from 'naive-ui'
 import type { Ref } from 'vue'
 import { Slots } from 'vue'
 
+import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface'
+
+import type {
+  FormItemProps,
+  GridItemProps,
+  InputProps,
+  SelectProps,
+  RadioProps,
+  ColorPickerProps,
+  CheckboxProps,
+  DatePickerProps
+} from 'naive-ui'
+
+export interface VcNaiveRunTimeComponentType {
+  NInput: InputProps
+  NSelect: SelectProps
+  NRadio: RadioProps
+  NColorPicker: ColorPickerProps
+  NCheckbox: CheckboxProps
+  NDatePicker: DatePickerProps
+  Slot: Slots
+}
+
 export type VcNaiveFormComponentName =
   | 'NInput'
   | 'NSelect'
@@ -12,15 +35,22 @@ export type VcNaiveFormComponentName =
   | 'NDatePicker'
   | 'Slot'
 
-import type { FormItemProps, GridItemProps } from 'naive-ui'
-import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface'
+// export type VcNaiveFormComponentName = keyof VcNaiveRunTimeComponentType
 
 export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>
+
+// export type VcNaiveComponentProps<T> = T extends VcNaiveFormComponentName
+//   ? VcNaiveRunTimeComponentType[T]
+//   : never
+// export type VcNaiveComponentProps<T = VcNaiveRunTimeComponentType> = {
+//   [P in keyof T]: P
+// }
 
 export interface NaiveFormSchema {
   field: string
   component?: VcNaiveFormComponentName
-  componentProps?: Record<string, any>
+  // componentProps?: VcNaiveComponentProps<VcNaiveFormComponentName>
+  componentProps?: { [key: string]: any }
   componentSlots?: (() => Slots | HTMLElement) | Slots
   formItemProps?: NaiveGridFormItemProps & Record<string, any>
 }

@@ -1,0 +1,133 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/jiabinbin/myself/open_source/vc-view"
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@vc-view/vc-ant",
+      "version": "1.0.0",
+      "description": "",
+      "main": "./dist/vc-ant.js",
+      "types": "./dist/types/components/index.d.ts",
+      "exports": {
+        ".": {
+          "import": "./dist/vc-ant.js"
+        },
+        "./dist/style.css": {
+          "import": "./dist/style.css"
+        },
+        "./dist/": {
+          "import": "./dist/es/components/"
+        }
+      },
+      "files": [
+        "dist",
+        "README.md",
+        "package.json",
+        "LICENSE"
+      ],
+      "scripts": {
+        "tsc:ant": "vue-tsc --noEmit",
+        "clean:ant": "rimraf dist",
+        "build:ant": "pnpm run clean:ant && pnpm run build:ant-all && pnpm run build:ant-esm",
+        "build:ant-all": "vite build --config vite.ant.ts",
+        "build:ant-esm": "vite build --config vite.ant.esm.ts",
+        "publish:vc-ant": "npm publish --access public",
+        "unpublish:vc-ant": "npm unpublish vc-ant --force"
+      },
+      "peerDependencies": {
+        "ant-design-vue": "^3.0.0-beta.5",
+        "lodash-es": "^4.17.21",
+        "vue": "^3.2.26"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "/Users/jiabinbin/myself/open_source/vc-view/vc-ant"
+  },
+  "2 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "vc-view/monorepo",
+      "version": "1.0.0",
+      "description": "",
+      "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "lint:eslint": "eslint --cache --max-warnings 0  \"./**/*.{vue,ts,tsx}\" --fix",
+        "lint:prettier": "prettier --write  \"./**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+        "tsc:docs": "pnpm -C ./docs tsc:docs",
+        "tsc:naive": "pnpm -C ./vc-naive tsc:naive",
+        "dev": "pnpm -C ./docs dev:docs",
+        "build:vc-naive": "pnpm -C ./vc-naive build:naive"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "MIT",
+      "devDependencies": {
+        "@types/lodash": "^4.14.178",
+        "@types/node": "^17.0.8",
+        "@vc-view/docs": "workspace:*",
+        "@vc-view/vc-naive": "workspace:^1.0.0",
+        "@vc-view/vc-ant": "workspace:^1.0.0",
+        "@vitejs/plugin-vue": "^2.0.1",
+        "@vitejs/plugin-vue-jsx": "^1.3.3",
+        "@vue/compiler-sfc": "^3.2.26",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "@vue/eslint-config-typescript": "^10.0.0",
+        "ant-design-vue": "^3.0.0-beta.5",
+        "element-plus": "^1.2.0-beta.6",
+        "eslint": "^8.6.0",
+        "eslint-define-config": "^1.2.2",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-vue": "^8.2.0",
+        "less": "^4.1.2",
+        "lodash-es": "^4.17.21",
+        "naive-ui": "^2.23.2",
+        "prettier": "^2.5.1",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.5.4",
+        "vite": "^2.7.10",
+        "vite-plugin-dts": "^0.9.7",
+        "vue": "^3.2.26",
+        "vue-tsc": "^0.29.8"
+      }
+    },
+    "prefix": "/Users/jiabinbin/myself/open_source/vc-view"
+  },
+  "3 debug pnpm:context": {
+    "currentLockfileExists": true,
+    "storeDir": "/Users/jiabinbin/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/jiabinbin/myself/open_source/vc-view/node_modules/.pnpm"
+  },
+  "4 debug pnpm:stage": {
+    "prefix": "/Users/jiabinbin/myself/open_source/vc-view",
+    "stage": "resolution_started"
+  },
+  "5 debug pnpm:_dependency_resolved": {
+    "resolution": "link:docs",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@vc-view/docs",
+      "rawSpec": "workspace:*"
+    }
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "link:vc-ant",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@vc-view/vc-ant",
+      "rawSpec": "workspace:*"
+    }
+  },
+  "7 error pnpm": {
+    "code": "ERR_PNPM_NO_MATCHING_VERSION_INSIDE_WORKSPACE",
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "In ..: No matching version found for @vc-view/vc-naive@* inside the workspace",
+      "code": "ERR_PNPM_NO_MATCHING_VERSION_INSIDE_WORKSPACE",
+      "stack": "pnpm: In ..: No matching version found for @vc-view/vc-naive@* inside the workspace\n    at tryResolveFromWorkspace (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:85798:15)\n    at resolveNpm (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:85689:39)\n    at Object.resolve (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:85921:40)\n    at ctx.requestsQueue.add.priority (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71846:75)\n    at run (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71562:90)\n    at PQueue._tryToStartAnother (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71516:13)\n    at /Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71575:16\n    at new Promise (<anonymous>)\n    at PQueue.add (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71557:16)\n    at resolveAndFetch (/Users/jiabinbin/pnpm-global/5/node_modules/.pnpm/pnpm@6.25.0/node_modules/pnpm/dist/pnpm.cjs:71846:55)"
+    }
+  }
+}

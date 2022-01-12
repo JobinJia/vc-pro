@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { NaiveFormSchema } from '@/vc-naive/components/VcNaiveForm/type'
+  import { NaiveFormSchema, VcNaiveFormProps } from '@/vc-naive/components/VcNaiveForm/type'
   import { useNaiveForm } from '@/vc-naive/components/VcNaiveForm'
   import { ref } from 'vue'
   import {
@@ -13,7 +13,6 @@
     NInputNumber,
     NAlert
   } from 'naive-ui'
-
   const rPasswordFormItemRef = ref<any>({})
   const schemas: NaiveFormSchema[] = [
     {
@@ -145,63 +144,65 @@
     }
   ]
 
-  const { modelRef, methods } = useNaiveForm(
-    {
-      labelWidth: 80,
-      labelPlacement: 'left',
-      schemas,
-      gridProps: {
-        cols: 1
-      },
-      rules: {
-        age: [
-          {
-            required: true,
-            validator(rule, value) {
-              if (!value) {
-                return new Error('需要年龄')
-              } else if (!/^\d*$/.test(value)) {
-                return new Error('年龄应该为整数')
-              } else if (Number(value) < 18) {
-                return new Error('年龄应该超过十八岁')
-              }
-              return true
-            },
-            trigger: ['input', 'blur']
-          }
-        ],
-        password: [
-          {
-            required: true,
-            message: '请输入密码'
-          }
-        ],
-        reenteredPassword: [
-          {
-            required: true,
-            message: '请再次输入密码',
-            trigger: ['input', 'blur']
-          },
-          {
-            validator: validatePasswordStartWith,
-            message: '两次密码输入不一致',
-            trigger: 'input'
-          },
-          {
-            validator: validatePasswordSame,
-            message: '两次密码输入不一致',
-            trigger: ['blur', 'password-input']
-          }
-        ]
-      }
+  const useFormRef = ref<VcNaiveFormProps>({
+    labelWidth: 80,
+    labelPlacement: 'left',
+    schemas,
+    gridProps: {
+      cols: 1
     },
-    {
-      age: null
+    rules: {
+      age: [
+        {
+          required: true,
+          validator(rule, value) {
+            if (!value) {
+              return new Error('需要年龄')
+            } else if (!/^\d*$/.test(value)) {
+              return new Error('年龄应该为整数')
+            } else if (Number(value) < 18) {
+              return new Error('年龄应该超过十八岁')
+            }
+            return true
+          },
+          trigger: ['input', 'blur']
+        }
+      ],
+      password: [
+        {
+          required: true,
+          message: '请输入密码'
+        }
+      ],
+      reenteredPassword: [
+        {
+          required: true,
+          message: '请再次输入密码',
+          trigger: ['input', 'blur']
+        },
+        {
+          validator: validatePasswordStartWith,
+          message: '两次密码输入不一致',
+          trigger: 'input'
+        },
+        {
+          validator: validatePasswordSame,
+          message: '两次密码输入不一致',
+          trigger: ['blur', 'password-input']
+        }
+      ]
     }
-  )
+  })
+
+  const {
+    modelRef,
+    methods: { register: registerForm, validate, resetNaiveForm }
+  } = useNaiveForm(useFormRef, {
+    age: null
+  })
 
   function reset() {
-    methods.resetNaiveForm()
+    resetNaiveForm()
   }
 
   function validatePasswordStartWith(rule, value) {
@@ -230,7 +231,7 @@
 
   function handleValidateButtonClick(e) {
     e.preventDefault()
-    methods.validate((errors) => {
+    validate((errors) => {
       if (!errors) {
         console.info('验证成功')
       } else {
@@ -245,9 +246,7 @@
   function toggleLabelWidth(val) {
     if (!val) return
     labelWidthRef.value = val
-    methods.updNaiveFormProps({
-      labelWidth: val
-    })
+    useFormRef.value.labelWidth = val
   }
 
   // col
@@ -255,35 +254,58 @@
   function toggleCol(col) {
     if (!col) return
     colRef.value = col
-    methods.updNaiveFormProps({
-      gridProps: {
-        cols: col
-      }
-    })
+    useFormRef.value.gridProps.cols = col
   }
 
   // disable form
   function disableForm(val: boolean) {
-    methods.updNaiveFormProps({
-      disabled: !val
-    })
+    useFormRef.value.disabled = !val
   }
 
   // label placement
   function labelAlign(val: boolean) {
-    // useFormRef.value.labelAlign = val ? 'left' : 'right'
-    methods.updNaiveFormProps({
-      labelAlign: val ? 'left' : 'right'
-    })
+    useFormRef.value.labelAlign = val ? 'left' : 'right'
   }
 
   function getData() {
     console.log(modelRef.value)
   }
+
+  const formSchemas2: NaiveFormSchema[] = [
+    {
+      field: 'input2',
+      component: 'NInput',
+      formItemProps: {
+        label: 'InputLabel',
+        labelPlacement: 'left'
+      }
+    }
+  ]
+
+  const {
+    modelRef: modelRef1,
+    methods: { register: register1 }
+  } = useNaiveForm<{
+    input2: string
+  }>({
+    schemas: formSchemas2
+  })
 </script>
 
 <template>
   <div>
+    <NAlert type="info">
+      使用 hook useNaiveForm时，当传递的参数为响应式对象时, 则只需要变更参数即可更新组件视图
+      <pre>
+        const options = ref&lt;VcNaiveFormProps&gt;({
+          labelWidth: 80,
+        })
+        const { modelRef, methods } = useNaiveForm(options)
+        function updLabelWith () {
+          options.value.labelWith = 100
+        }
+      </pre>
+    </NAlert>
     <NCard>
       <NSpace align="center">
         <n-switch size="large" :on-update:value="disableForm" :default-value="true">
@@ -319,7 +341,7 @@
         </n-input-group>
       </NSpace>
       <NDivider />
-      <VcNaiveForm @register="methods.register" />
+      <VcNaiveForm @register="registerForm" />
       <NSpace>
         <NButton type="primary" @click="getFormModel"> 获取model </NButton>
         <NButton type="primary" @click="updFormValue"> 改变值 </NButton>

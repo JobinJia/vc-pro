@@ -6,8 +6,15 @@ VcNaiveForm.install = function (app: App) {
   return app
 }
 
-export * from './type'
-
 export default VcNaiveForm as typeof VcNaiveForm & Plugin
 
 export { useNaiveForm } from './composables/useNaiveForm'
+
+export type {
+  NaiveFormSchema,
+  NaiveGridFormItemProps,
+  VcNaiveFormEmit,
+  VcNaiveFormExpose,
+  VcNaiveFormProps,
+  VcNaiveFormComponentName
+} from './type'

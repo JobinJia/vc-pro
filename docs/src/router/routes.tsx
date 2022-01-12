@@ -2,10 +2,10 @@ import { RouteRecordRaw } from 'vue-router'
 import BasicLayout from '../layouts/BasicLayout.vue'
 import { defineComponent } from 'vue'
 
-function getParentLayout (name: string) {
+function getParentLayout(name: string) {
   return defineComponent({
     name,
-    setup () {
+    setup() {
       return () => <router-view />
     }
   })
@@ -39,7 +39,16 @@ const routes: RouteRecordRaw[] = [
             meta: {
               title: 'VcNaiveForm'
             },
-            component: () => import('../views/use-naive-form/index.vue')
+            // component: () => import('../views/use-naive-form/index.vue')
+            component: () => import('../views/md/vc-naive-form.md')
+          },
+          {
+            path: 'naiveFormRef',
+            name: 'NaiveFormRef',
+            meta: {
+              title: 'VcNaiveFormRef'
+            },
+            component: () => import('../views/use-naive-form/useNaiveFormRef.vue')
           }
         ]
       }

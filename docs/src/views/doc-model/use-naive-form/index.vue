@@ -284,6 +284,19 @@
 
 <template>
   <div>
+    <NAlert type="info">
+      使用 hook useNaiveForm时，当传递的参数为普通的非响应式对象时,
+      则更新属性需要手动调用返回的methods中的方法。如
+      <pre>
+        const options = {}
+        const { modelRef, methods } = useNaiveForm(options)
+        function updLabelWith () {
+          methods.updNaiveFormProps({
+            labelWidth: 200
+          })
+        }
+      </pre>
+    </NAlert>
     <NCard>
       <NSpace align="center">
         <n-switch size="large" :on-update:value="disableForm" :default-value="true">

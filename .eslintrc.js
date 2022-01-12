@@ -1,7 +1,7 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { defineConfig } = require('eslint-define-config')
-module.exports = defineConfig({
+// const { defineConfig } = require('eslint-define-config')
+module.exports = {
   root: true,
   env: {
     browser: true,
@@ -35,6 +35,7 @@ module.exports = defineConfig({
     'vue/max-attributes-per-line': 'off',
     'vue/require-default-prop': 'off',
     'vue/no-setup-props-destructure': 'off',
+    'vue/multi-word-component-names': 'off',
     'vue/html-self-closing': [
       'error',
       {
@@ -48,4 +49,4 @@ module.exports = defineConfig({
       }
     ]
   }
-})
+}

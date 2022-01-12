@@ -46,7 +46,7 @@
       function updNaiveFormProps(
         updProps: Ref<Partial<VcNaiveFormProps>> | Partial<VcNaiveFormProps>
       ) {
-        innerProps.value = merge(innerProps.value, unref(updProps))
+        innerProps.value = merge(unref(innerProps), unref(updProps))
       }
 
       function resetNaiveForm() {
