@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import { NaiveFormSchema } from '@/vc-naive/components/VcNaiveForm/type'
+  import { NaiveFormSchema, VcNaiveFormProps } from '@/vc-naive/components/VcNaiveForm/type'
   import { useNaiveForm } from '@/vc-naive/components/VcNaiveForm'
-  import { ref } from 'vue'
+  import { ref, unref } from 'vue'
   import {
+    NButton,
     NCard,
     NSpace,
     NSwitch,
-    NButton,
-    NDivider,
     NInputGroup,
     NInputGroupLabel,
     NInputNumber,
-    NMessageProvider
+    NDivider,
+    useMessage
   } from 'naive-ui'
   const rPasswordFormItemRef = ref<any>({})
   const schemas: NaiveFormSchema[] = [
@@ -143,62 +143,63 @@
       }
     }
   ]
-  const { modelRef, methods } = useNaiveForm(
-    {
-      labelWidth: 80,
-      labelPlacement: 'left',
-      schemas,
-      gridProps: {
-        cols: 1
-      },
-      rules: {
-        age: [
-          {
-            required: true,
-            validator(rule, value) {
-              if (!value) {
-                return new Error('需要年龄')
-              } else if (!/^\d*$/.test(value)) {
-                return new Error('年龄应该为整数')
-              } else if (Number(value) < 18) {
-                return new Error('年龄应该超过十八岁')
-              }
-              return true
-            },
-            trigger: ['input', 'blur']
-          }
-        ],
-        password: [
-          {
-            required: true,
-            message: '请输入密码'
-          }
-        ],
-        reenteredPassword: [
-          {
-            required: true,
-            message: '请再次输入密码',
-            trigger: ['input', 'blur']
-          },
-          {
-            validator: validatePasswordStartWith,
-            message: '两次密码输入不一致',
-            trigger: 'input'
-          },
-          {
-            validator: validatePasswordSame,
-            message: '两次密码输入不一致',
-            trigger: ['blur', 'password-input']
-          }
-        ]
-      }
+  const useFormRef = ref<VcNaiveFormProps>({
+    labelWidth: 80,
+    labelPlacement: 'left',
+    schemas,
+    gridProps: {
+      cols: 1
     },
-    {
-      age: null
+    rules: {
+      age: [
+        {
+          required: true,
+          validator(rule, value) {
+            if (!value) {
+              return new Error('需要年龄')
+            } else if (!/^\d*$/.test(value)) {
+              return new Error('年龄应该为整数')
+            } else if (Number(value) < 18) {
+              return new Error('年龄应该超过十八岁')
+            }
+            return true
+          },
+          trigger: ['input', 'blur']
+        }
+      ],
+      password: [
+        {
+          required: true,
+          message: '请输入密码'
+        }
+      ],
+      reenteredPassword: [
+        {
+          required: true,
+          message: '请再次输入密码',
+          trigger: ['input', 'blur']
+        },
+        {
+          validator: validatePasswordStartWith,
+          message: '两次密码输入不一致',
+          trigger: 'input'
+        },
+        {
+          validator: validatePasswordSame,
+          message: '两次密码输入不一致',
+          trigger: ['blur', 'password-input']
+        }
+      ]
     }
-  )
+  })
+  const {
+    modelRef,
+    methods: { register: registerForm, validate, resetNaiveForm }
+  } = useNaiveForm(useFormRef, {
+    age: null
+  })
   function reset() {
-    methods.resetNaiveForm()
+    resetNaiveForm()
   }
   function validatePasswordStartWith(rule, value) {
     return (
@@ -215,15 +216,16 @@
       rPasswordFormItemRef.value.validate({ trigger: 'password-input' })
     }
   }
+
   function getFormModel() {
-    console.info(JSON.stringify(modelRef.value))
+    alert(JSON.stringify(unref(modelRef)))
   }
   function updFormValue() {
     modelRef.value.input = Math.random().toString(32).substr(5, 12)
   }
   function handleValidateButtonClick(e) {
     e.preventDefault()
-    methods.validate((errors) => {
+    validate((errors) => {
       if (!errors) {
         console.info('验证成功')
       } else {
@@ -234,92 +236,78 @@
   }
   // dynamic label width
   const labelWidthRef = ref<number>(80)
-  function toggleLabelWidth(val) {
-    if (!val) return
+  function toggleLabelWidth(val: number) {
     labelWidthRef.value = val
-    methods.updNaiveFormProps({
-      labelWidth: val
-    })
+    useFormRef.value.labelWidth = val
   }
   // col
   const colRef = ref<number>(1)
-  function toggleCol(col) {
+  function toggleCol(col: number) {
     if (!col) return
     colRef.value = col
-    methods.updNaiveFormProps({
-      gridProps: {
-        cols: col
-      }
-    })
+    useFormRef.value.gridProps.cols = col
   }
   // disable form
   function disableForm(val: boolean) {
-    methods.updNaiveFormProps({
-      disabled: !val
-    })
+    useFormRef.value.disabled = !val
   }
   // label placement
   function labelAlign(val: boolean) {
-    // useFormRef.value.labelAlign = val ? 'left' : 'right'
-    methods.updNaiveFormProps({
-      labelAlign: val ? 'left' : 'right'
-    })
+    useFormRef.value.labelAlign = val ? 'left' : 'right'
   }
 </script>
 
 <template>
   <div>
-    <n-message-provider>
-      <NCard>
-        <NSpace align="center">
-          <n-switch size="large" :on-update:value="disableForm" :default-value="true">
-            <template #checked>启用表单</template>
-            <template #unchecked>禁用表单</template>
-          </n-switch>
-          <n-switch size="large" :on-update:value="labelAlign" :default-value="false">
-            <template #checked>label居左</template>
-            <template #unchecked>label居右</template>
-          </n-switch>
-          <n-input-group>
-            <n-input-group-label>labelWidth:</n-input-group-label>
-            <n-input-number
-              v-model:value="labelWidthRef"
-              :style="{ width: '33%' }"
-              :on-update:value="toggleLabelWidth"
-              placeholder="最小值"
-              :min="80"
-              :max="150"
-            />
-          </n-input-group>
-          <n-input-group>
-            <n-input-group-label>一行</n-input-group-label>
-            <n-input-number
-              v-model:value="colRef"
-              :style="{ width: '33%' }"
-              :on-update:value="toggleCol"
-              placeholder="最小值"
-              :min="1"
-              :max="12"
-            />
-            <n-input-group-label>列</n-input-group-label>
-          </n-input-group>
-        </NSpace>
-        <NDivider />
-        <VcNaiveForm @register="methods.register" />
-        <NSpace>
-          <NButton type="primary" @click="getFormModel"> 获取model </NButton>
-          <NButton type="primary" @click="updFormValue"> 改变值 </NButton>
-          <NButton type="primary" @click="reset"> 重置 </NButton>
-          <NButton
-            type="warning"
-            :disabled="modelRef.age === null"
-            round
-            @click="handleValidateButtonClick"
-          >
-            验证
-          </NButton>
-        </NSpace>
-      </NCard>
-    </n-message-provider>
+    <NCard>
+      <NSpace align="center">
+        <n-switch size="large" :on-update:value="disableForm" :default-value="true">
+          <template #checked>启用表单</template>
+          <template #unchecked>禁用表单</template>
+        </n-switch>
+        <n-switch size="large" :on-update:value="labelAlign" :default-value="false">
+          <template #checked>label居左</template>
+          <template #unchecked>label居右</template>
+        </n-switch>
+        <n-input-group>
+          <n-input-group-label>labelWidth:</n-input-group-label>
+          <n-input-number
+            v-model:value="labelWidthRef"
+            :style="{ width: '33%' }"
+            :on-update:value="toggleLabelWidth"
+            placeholder="最小值"
+            :min="80"
+            :max="150"
+          />
+        </n-input-group>
+        <n-input-group>
+          <n-input-group-label>一行</n-input-group-label>
+          <n-input-number
+            v-model:value="colRef"
+            :style="{ width: '33%' }"
+            :on-update:value="toggleCol"
+            placeholder="最小值"
+            :min="1"
+            :max="12"
+          />
+          <n-input-group-label>列</n-input-group-label>
+        </n-input-group>
+      </NSpace>
+      <NDivider />
+      <VcNaiveForm @register="registerForm" />
+      <NSpace>
+        <NButton type="primary" @click="getFormModel"> 获取model </NButton>
+        <NButton type="primary" @click="updFormValue"> 改变值 </NButton>
+        <NButton type="primary" @click="reset"> 重置 </NButton>
+        <NButton
+          type="warning"
+          :disabled="modelRef.age === null"
+          round
+          @click="handleValidateButtonClick"
+        >
+          验证
+        </NButton>
+      </NSpace>
+    </NCard>
   </div>
 </template>
