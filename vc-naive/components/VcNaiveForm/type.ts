@@ -1,4 +1,3 @@
-import type { FormProps, GridProps } from 'naive-ui'
 import type { Ref } from 'vue'
 import { Slots } from 'vue'
 
@@ -10,20 +9,22 @@ import type {
   InputProps,
   SelectProps,
   RadioProps,
+  RadioGroupProps,
   ColorPickerProps,
   CheckboxProps,
-  DatePickerProps
+  DatePickerProps,
+  FormProps,
+  GridProps
 } from 'naive-ui'
 
-export type NotNull<T> = T extends null | undefined ? never : T
-
 export interface VcNaiveFormComponentMap {
-  NInput: InputProps | NotNull<Record<string, any>>
+  NInput: InputProps | Record<string, any>
   NSelect: SelectProps | Record<string, any>
   NRadio: RadioProps | Record<string, any>
   NColorPicker: ColorPickerProps | Record<string, any>
   NCheckbox: CheckboxProps | Record<string, any>
   NDatePicker: DatePickerProps | Record<string, any>
+  NRadioGroup: RadioGroupProps | Record<string, any>
   Slot: () => Slots
 }
 
@@ -31,24 +32,23 @@ export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>
 
 export type VcNaiveFormComponentName = keyof VcNaiveFormComponentMap
 
-export interface NaiveFormSchema<Name extends VcNaiveFormComponentName> {
+export interface VcNaiveFormSchema<Name extends VcNaiveFormComponentName> {
   field: string
-  component?: VcNaiveFormComponentName
-  componentProps?: Record<string, any> | VcNaiveFormComponentMap[Name]
-  // componentProps?: { [key: string]: any }
+  component?: Name
+  componentProps?: VcNaiveFormComponentMap[Name]
   componentSlots?: (() => Slots | HTMLElement) | Slots
   formItemProps?: NaiveGridFormItemProps & Record<string, any>
 }
 
-export function defineSchema<T extends VcNaiveFormComponentName>(schema: NaiveFormSchema<T>) {
+export function defineSchema<T extends VcNaiveFormComponentName>(schema: VcNaiveFormSchema<T>) {
   return schema
 }
 
-export type NaiveFormSchemas = typeof defineSchema[]
+export type VcNaiveFormSchemas = VcNaiveFormSchema<VcNaiveFormComponentName>[]
 
 export interface VcNaiveFormProps extends FormProps {
   model?: Record<string, any>
-  schemas?: NaiveFormSchemas
+  schemas?: VcNaiveFormSchemas
   gridProps?: Partial<GridProps>
 }
 

@@ -9,6 +9,10 @@ export default defineConfig({
       {
         find: '@',
         replacement: resolve(__dirname, '../')
+      },
+      {
+        find: '~',
+        replacement: resolve(__dirname, './')
       }
     ]
   }

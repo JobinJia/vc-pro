@@ -1,13 +1,13 @@
 import type { PropType } from 'vue'
 import { GridProps } from 'naive-ui'
-import { NaiveFormSchema } from './type'
+import { VcNaiveFormSchemas } from './type'
 import { NForm } from 'naive-ui'
 
 const formProps = NForm.props
 export const vcNaiveFormProps = {
   ...formProps,
   schemas: {
-    type: Array as PropType<NaiveFormSchema[]>
+    type: Array as PropType<VcNaiveFormSchemas>
   },
   gridProps: {
     type: Object as PropType<Partial<GridProps>>,

@@ -1,0 +1,17 @@
+{
+  "name": "@vc-view/vc-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress-fc dev --root=../vc-docs --host --port 8090 --open",
+    "build": "vite build && yarn type"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress-for-component": "^0.16.6"
+  }
+}

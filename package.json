@@ -18,6 +18,7 @@
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.8",
     "@vc-view/docs": "workspace:*",
+    "@vc-view/vc-docs": "workspace:*",
     "@vc-view/vc-ant": "workspace:*",
     "@vc-view/vc-naive": "workspace:^1.0.0",
     "@vitejs/plugin-vue": "^2.0.1",

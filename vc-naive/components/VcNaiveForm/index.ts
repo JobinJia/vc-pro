@@ -10,8 +10,11 @@ export default VcNaiveForm as typeof VcNaiveForm & Plugin
 
 export { useNaiveForm } from './composables/useNaiveForm'
 
+export { defineSchema } from './type'
+
 export type {
-  NaiveFormSchema,
+  VcNaiveFormSchema,
+  VcNaiveFormSchemas,
   NaiveGridFormItemProps,
   VcNaiveFormEmit,
   VcNaiveFormExpose,

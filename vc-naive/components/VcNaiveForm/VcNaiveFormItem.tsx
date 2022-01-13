@@ -1,5 +1,5 @@
 import { computed, DefineComponent, defineComponent, PropType } from 'vue'
-import { NaiveFormSchema } from './type'
+import { VcNaiveFormSchema, VcNaiveFormComponentName } from './type'
 // import {Recordable} from "@/interface/global";
 import { componentMap } from './componentMap'
 import { isFunction } from 'lodash-es'
@@ -8,7 +8,7 @@ export default defineComponent({
   name: 'VcNaiveFormItem',
   props: {
     schema: {
-      type: Object as PropType<NaiveFormSchema>,
+      type: Object as PropType<VcNaiveFormSchema<VcNaiveFormComponentName>>,
       required: false,
       default: () => ({})
     },
