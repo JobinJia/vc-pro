@@ -1,5 +1,5 @@
 {
-  "name": "@vc-view/vc-docs",
+  "name": "@vc-view/docs",
   "version": "1.0.0",
   "description": "vc-docs",
   "main": "./dist/vc-docs.umd.js",
