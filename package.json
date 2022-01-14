@@ -6,9 +6,8 @@
     "preinstall": "npx only-allow pnpm",
     "lint:eslint": "eslint --cache --max-warnings 0  \"./**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"./**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
-    "tsc:docs": "pnpm -C ./docs tsc:docs",
     "tsc:naive": "pnpm -C ./vc-naive tsc:naive",
-    "dev": "pnpm -C ./docs docs:dev",
+    "dev": "pnpm -C ./docs dev",
     "build:vc-naive": "pnpm -C ./vc-naive build:naive"
   },
   "keywords": [],

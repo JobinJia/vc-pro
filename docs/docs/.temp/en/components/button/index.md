@@ -1,7 +1,7 @@
 ---
 map:
   path: /components/button
-  realPath: src\button\index.en-US.md
+  realPath: src/button/index.en-US.md
 ---
 
 # Button

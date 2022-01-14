@@ -1,7 +1,7 @@
 ---
 map:
-  path: /components/button
-  realPath: src\button\index.zh-CN.md
+  path: /components/vc-naive
+  realPath: src/vc-naive/index.zh-CN.md
 ---
 
 # Button
@@ -12,16 +12,24 @@ map:
 
 ### 基本用法
 
-<demo src="./demo/demo.vue"
+<demo src="./src/BasicNaiveFormDemo.vue"
   language="vue"
   title="基本用法"
   desc="点击切换。">
 </demo>
 
+### useNaiveForm
+
+<demo src="./src/VcNaiveFormDemo.vue"
+language="vue"
+title="Basic useage"
+desc="This is a button.">
+</demo>
+
 ## API
 
 ```ts
-import { Button } from '@vc-view/vc-docs';
+import { NaiveBasicForm } from '@vc-view/vc-docs';
 ```
 
 ## Props

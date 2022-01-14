@@ -1,7 +1,7 @@
 ---
 map:
   path: /components/vc-naive
-  realPath: src\vc-naive\index.en-US.md
+  realPath: src/vc-naive/index.en-US.md
 ---
 
 # Button
