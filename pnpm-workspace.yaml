@@ -1,4 +1,4 @@
 packages:
+  - 'docs/**'
   - 'vc-naive/**'
   - 'vc-ant/**'
-  - 'docs/**'

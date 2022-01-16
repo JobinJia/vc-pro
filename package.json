@@ -7,7 +7,9 @@
     "lint:eslint": "eslint --cache --max-warnings 0  \"./**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"./**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
     "tsc:naive": "pnpm -C ./vc-naive tsc:naive",
-    "dev": "pnpm -C ./docs docs:dev",
+    "docs:dev": "vitepress-fc dev docs --port 8090 --open --host",
+    "docs:build": "vitepress-fc build",
+    "docs:serve": "vitepress-fc serve",
     "build:vc-naive": "pnpm -C ./vc-naive build:naive"
   },
   "keywords": [],
@@ -38,6 +40,7 @@
     "typescript": "^4.5.4",
     "vite": "^2.7.10",
     "vite-plugin-dts": "^0.9.9",
+    "vitepress-for-component": "^0.16.6",
     "vue": "^3.2.26",
     "vue-tsc": "^0.29.8"
   }

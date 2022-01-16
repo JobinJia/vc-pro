@@ -1,8 +1,9 @@
 <script setup lang="tsx">
-  import { defineSchema, VcNaiveFormSchemas } from '@/vc-naive/components/VcNaiveForm'
-  // import { defineSchema, VcNaiveFormSchemas } from '@vc-view/vc-naive/components/VcNaiveForm'
+  // import { VcNaiveFormSchemas, defineSchema } from '@vc-view/vc-naive/components/VcNaiveForm'
+  import { defineSchema, VcNaiveFormSchemas } from '..'
   import { NRadio } from 'naive-ui'
-  import VcNaiveForm from '@/vc-naive/components/VcNaiveForm'
+  // import VcNaiveForm from '@vc-view/vc-naive/components/VcNaiveForm'
+  import VcNaiveForm from '..'
 
   const radioOptions = [
     {

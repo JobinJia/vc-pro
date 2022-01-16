@@ -1,23 +1,29 @@
 ## 介绍
 
-ahooks 的 vue 实现。
-
-许多 hooks 是从[ahooks](https://ahooks.js.org/docs)移植过来的，但是不完全一致。
+naive-ui, ant-design-vue, element 二次封装组件，
+提供对应的hook函数，
+及request的封装。【基于umi-request】
 
 ## 特点
 
 - 易于使用.
-- 同时适用于 Vue3 和 Vue2。( 感谢[vue-demi](https://github.com/antfu/vue-demi) ).
+- 适用于 Vue3
 - 由 TS 编写，完整的类型推导.
 
 ## 安装
 
+针对不同的组件，提供不同的包
 ```
-yarn add ahooks-vue
+// naive-ui
+pnpm install @vc-view/naive-ui
+// ant-design-vue
+pnpm install @vc-view/ant-design-vue
+// element-plus
+pnpm install @vc-view/element-plus
 ```
 
 ## 使用
 
 ```
-import { useWorkerFunction } from 'ahooks-vue';
+ 见组件部分文档
 ```

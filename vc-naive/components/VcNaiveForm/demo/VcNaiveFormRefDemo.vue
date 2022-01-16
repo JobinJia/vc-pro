@@ -1,10 +1,12 @@
 <script setup lang="ts">
-  import {
-    VcNaiveFormSchemas,
-    VcNaiveFormProps,
-    defineSchema,
-    useNaiveForm
-  } from '@/vc-naive/components/VcNaiveForm'
+  // import {
+  //   VcNaiveFormSchemas,
+  //   VcNaiveFormProps,
+  //   defineSchema,
+  //   useNaiveForm
+  // } from '@/vc-naive/components/VcNaiveForm'
+  import { VcNaiveFormSchemas, VcNaiveFormProps, defineSchema, useNaiveForm } from '..'
+  import VcNaiveForm from '..'
   import { ref, unref } from 'vue'
   import {
     NButton,

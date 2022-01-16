@@ -1,57 +1,57 @@
-const { resolve } = require('path')
+const base = process.env.NODE_ENV === 'production' ? '/' : ''
+
+const sidebar = [
+  {
+    text: '组件',
+    children: [
+      {
+        text: 'vc-naive',
+        children: [
+          {
+            text: 'form',
+            link: '/components/vc-naive/form/'
+          }
+        ]
+      },
+    ]
+  }
+]
+
 module.exports = {
   title: 'Vc-View',
-  description: 'Just playing around.',
-  srcIncludes: ['./docs/src'],
-  // alias: {
-  //   '@vc-view/vc-naive': resolve(__dirname, '../vc-naive')
-  // },
-  base: '/',
-
+  description: 'UI Component Plus',
+  srcIncludes: ['./vc-naive/components'],
+  base,
   themeConfig: {
-    lang: 'en-US',
+    lang: 'zh-CN',
     lastUpdated: '最近更新',
     repo: 'JobinJia/vc-view',
     repoLabel: 'Github',
     prevLink: true,
     nextLink: true,
-
-    nav: [{ text: 'demo', link: '/math' }],
-    lang: 'zh-CN',
+    alias: {
+      // 'naive-ui': './node_modules/naive-ui',
+      // '@vc-view/vc-naive': './vc-naive/components/'
+    },
     locales: {
       '/': {
         lang: 'zh-CN',
         title: 'vc-view',
-        description: 'vc-view',
+        description: 'vue hooks',
         label: '中文',
-        selectText: '语言',
-        nav: [
-          { text: '指南', link: '/' },
-          { text: '组件', link: `/components/vc-naive` }
-        ],
-        sidebar: [
-          {
-            text: '表单',
-            link: '/components/vc-naive/form'
-          }
-        ]
-      },
-      '/en/': {
-        lang: 'en-US',
-        title: 'vc-view',
-        description: 'vc-view',
-        label: 'English',
         selectText: 'Languages',
         nav: [
-          { text: 'Guide', link: '/en/' },
-          { text: 'Component', link: '/en/components/vc-naive' }
+          { text: '指南', link: '/' },
+          { text: '组件', link: '/components/vc-naive/form/' }
         ],
-        sidebar: [
-          {
-            text: 'form',
-            link: '/en/components/vc-naive/form'
-          }
-        ]
+        // sidebar
+      },
+      '/components/': {
+        nav: [
+          { text: '指南', link: '/' },
+          { text: '组件', link: '/components/vc-naive/form/' }
+        ],
+        sidebar
       }
     }
   }

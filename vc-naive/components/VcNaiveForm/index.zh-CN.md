@@ -1,12 +1,11 @@
 ---
 map:
-  # 映射到docs的路径
   path: /components/vc-naive/form
 ---
 
-# Button
+# VcNaiveForm
 
-这是一个简单的按钮。
+JSON表单
 
 ## 代码演示
 
@@ -17,12 +16,19 @@ map:
   title="基本用法"
   desc="点击切换。"> </demo>
 
-### useNaiveForm
+### useNaiveForm, 普通参数
 
 <demo src="./demo/VcNaiveFormDemo.vue"
 language="vue"
-title="Basic useage"
-desc="This is a button."> </demo>
+title="基本用法"
+desc="点击切换。"> </demo>
+
+### useNaiveForm, 响应式参数
+
+<demo src="./demo/VcNaiveFormRefDemo.vue"
+language="vue"
+title="基本用法"
+desc="点击切换。"> </demo>
 
 ## API
 
