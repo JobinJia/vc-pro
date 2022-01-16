@@ -1,7 +1,7 @@
 ---
 map:
-  path: /components/vc-naive
-  realPath: src/vc-naive/index.zh-CN.md
+  # 映射到docs的路径
+  path: /components/vc-naive/form
 ---
 
 # Button
@@ -12,24 +12,22 @@ map:
 
 ### 基本用法
 
-<demo src="./src/BasicNaiveFormDemo.vue"
+<demo src="./demo/BasicNaiveFormDemo.vue"
   language="vue"
   title="基本用法"
-  desc="点击切换。">
-</demo>
+  desc="点击切换。"> </demo>
 
 ### useNaiveForm
 
-<demo src="./src/VcNaiveFormDemo.vue"
+<demo src="./demo/VcNaiveFormDemo.vue"
 language="vue"
 title="Basic useage"
-desc="This is a button.">
-</demo>
+desc="This is a button."> </demo>
 
 ## API
 
 ```ts
-import { NaiveBasicForm } from '@vc-view/vc-docs';
+import { NaiveBasicForm } from '@vc-view/vc-naive'
 ```
 
 ## Props

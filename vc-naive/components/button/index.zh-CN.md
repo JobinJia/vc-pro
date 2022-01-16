@@ -21,7 +21,6 @@ map:
 ## API
 
 ```ts
-import { Button } from 'vc-docs';
 ```
 
 ## Props

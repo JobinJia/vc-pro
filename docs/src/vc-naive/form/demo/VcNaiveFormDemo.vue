@@ -1,10 +1,6 @@
 <script setup lang="ts">
-  import {
-    VcNaiveFormSchemas,
-    defineSchema,
-    useNaiveForm
-  } from '../../../../vc-naive/components/VcNaiveForm'
-  import VcNaiveForm from '../../../../vc-naive/components/VcNaiveForm'
+  import { VcNaiveFormSchemas, defineSchema, useNaiveForm } from '@/vc-naive/components/VcNaiveForm'
+  import VcNaiveForm from '@/vc-naive/components/VcNaiveForm'
   import { ref } from 'vue'
   import {
     NCard,

@@ -4,7 +4,7 @@
     VcNaiveFormProps,
     defineSchema,
     useNaiveForm
-  } from '../../../../vc-naive/components/VcNaiveForm'
+  } from '@/vc-naive/components/VcNaiveForm'
   import { ref, unref } from 'vue'
   import {
     NButton,
@@ -14,7 +14,7 @@
     NInputGroup,
     NInputGroupLabel,
     NInputNumber,
-    NDivider,
+    NDivider
   } from 'naive-ui'
   const rPasswordFormItemRef = ref<any>({})
   const schemas: VcNaiveFormSchemas = [

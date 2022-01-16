@@ -20,7 +20,7 @@ This is a button.
 ## API
 
 ```ts
-import { Button } from 'vc-docs';
+import { Button } from 'other';
 ```
 
 ## Props

@@ -1,6 +1,6 @@
 ---
 map:
-  path: /components/vc-naive
+  path: /en/components/vc-naive/form
 ---
 
 # Button
@@ -11,24 +11,22 @@ This is a button.
 
 ### Basic Usage
 
-<demo src="./src/BasicNaiveFormDemo.vue"
+<demo src="./demo/TestA.vue"
   language="vue"
   title="Basic useage"
-  desc="This is a button.">
-</demo>
+  desc="This is a button."> </demo>
 
 ### useNaiveForm
 
-<demo src="./src/VcNaiveFormDemo.vue"
+<!-- <demo src="./demo/VcNaiveFormDemo.vue"
   language="vue"
   title="Basic useage"
-  desc="This is a button.">
-</demo>
+  desc="This is a button."> </demo> -->
 
 ## API
 
 ```ts
-import { NaiveBasicForm } from '@vc-view/vc-docs';
+import { NaiveBasicForm } from '@vc-view/vc-naive'
 ```
 
 ## Props

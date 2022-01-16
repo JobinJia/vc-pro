@@ -1,9 +1,13 @@
-import Button from './button/button.vue'
-//
 // export { Button }
 
-import NaiveBasicForm from './vc-naive/src/BasicNaiveFormDemo.vue'
-import NaiveForm from './vc-naive/src/VcNaiveFormDemo.vue'
-import NaiveFormRef from './vc-naive/src/VcNaiveFormRefDemo.vue'
+// import NaiveBasicForm from './vc-naive/form/demo/BasicNaiveFormDemo.vue'
+// import NaiveForm from './vc-naive/form/demo/VcNaiveFormDemo.vue'
+// import NaiveFormRef from './vc-naive/form/demo/VcNaiveFormRefDemo.vue'
 
-export { NaiveBasicForm, NaiveForm, NaiveFormRef, Button }
+import NaiveBasicForm from './vc-naive/form/demo/TestA.vue'
+
+// export { NaiveBasicForm, NaiveForm, NaiveFormRef }
+
+export default {
+  NaiveBasicForm
+}
