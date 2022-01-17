@@ -20,7 +20,7 @@ const sidebar = [
 module.exports = {
   title: 'Vc-View',
   description: 'UI Component Plus',
-  srcIncludes: ['./vc-naive/components'],
+  srcIncludes: ['./vc-naive'],
   base,
   themeConfig: {
     lang: 'zh-CN',

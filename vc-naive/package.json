@@ -12,10 +12,7 @@
       "import": "./dist/style.css"
     },
     "./dist/": {
-      "import": "./dist/es/components/"
-    },
-    "./types/": {
-      "import": "./dist/types/"
+      "import": "./dist/"
     }
   },
   "files": [

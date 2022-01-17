@@ -1,4 +1,4 @@
-import { computed, DefineComponent, defineComponent, PropType } from 'vue'
+import { computed, DefineComponent, defineComponent, PropType, h } from 'vue'
 import { VcNaiveFormSchema, VcNaiveFormComponentName } from './type'
 // import {Recordable} from "@/interface/global";
 import { componentMap } from './componentMap'
@@ -58,13 +58,21 @@ export default defineComponent({
 
     return () => {
       const DynamicComponent = Component.value
-      return (
-        <DynamicComponent
-          {...{ ...comProps.value, ...attrs }}
-          v-model={[props.formModelRef[props.schema?.field], 'value']}
-          v-slots={comSlots.value}
-        />
+      return h(
+        DynamicComponent,
+        {
+          ...comProps.value,
+          ...attrs
+        },
+        comSlots.value
       )
+      // return (
+      //   <DynamicComponent
+      //     {...{ ...comProps.value, ...attrs }}
+      //     v-model={[props.formModelRef[props.schema?.field], 'value']}
+      //     v-slots={comSlots.value}
+      //   />
+      // )
     }
   }
 })
