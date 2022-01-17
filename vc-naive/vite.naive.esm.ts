@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 import * as fs from 'fs'
 
-const inputDir = resolve(__dirname, './components')
+const inputDir = resolve(__dirname, './')
 
 const inputsArray = fs.readdirSync(inputDir).filter((name) => {
   const componentDir = resolve(inputDir, name)
@@ -13,7 +13,7 @@ const inputsArray = fs.readdirSync(inputDir).filter((name) => {
 })
 
 const inputs = inputsArray.reduce((backObj, pkgName) => {
-  backObj[pkgName] = resolve(__dirname, `./components/${pkgName}/index.ts`)
+  backObj[pkgName] = resolve(__dirname, `./${pkgName}/index.ts`)
   return backObj
 }, {})
 
@@ -39,10 +39,11 @@ export default (): UserConfigExport => {
     plugins: [vue(), vueJsx()],
     build: {
       cssCodeSplit: true,
-      outDir: 'dist/es',
+      emptyOutDir: false,
+      outDir: 'dist',
       // emptyOutDir: true,
       lib: {
-        entry: 'components/index.ts',
+        entry: './index.ts',
         // entry: '',
         name: 'vc-naive.esm',
         formats: ['es']
@@ -53,8 +54,8 @@ export default (): UserConfigExport => {
           globals: {
             vue: 'Vue'
           },
-          entryFileNames: 'components/[name]/index.esm.js',
-          assetFileNames: 'components/[name]/index.css'
+          entryFileNames: '[name]/index.esm.js',
+          assetFileNames: '[name]/index.css'
           // file: (name) =>
           // format: 'es',
         },

@@ -11,7 +11,7 @@
     "components/**/*.d.ts",
     "components/**/*.tsx",
     "components/**/*.vue",
-    "../interface/**/*.ts",
-    "../interface/**/*.d.ts"
+    "../shared/**/*.ts",
+    "../shared/**/*.d.ts"
   ]
 }

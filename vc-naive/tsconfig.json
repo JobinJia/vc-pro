@@ -7,11 +7,11 @@
     }
   },
   "include": [
-    "components/**/*.ts",
-    "components/**/*.d.ts",
-    "components/**/*.tsx",
-    "components/**/*.vue",
-    "../interface/**/*.ts",
-    "../interface/**/*.d.ts"
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue",
+    "../shared/**/*.ts",
+    "../shared/**/*.d.ts"
   ]
 }

@@ -3,7 +3,7 @@
   "version": "1.0.04",
   "description": "",
   "main": "./dist/vc-naive.js",
-  "types": "./dist/types/components/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vc-naive.js"
@@ -13,6 +13,9 @@
     },
     "./dist/": {
       "import": "./dist/es/components/"
+    },
+    "./types/": {
+      "import": "./dist/types/"
     }
   },
   "files": [

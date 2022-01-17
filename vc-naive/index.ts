@@ -1,12 +1,12 @@
 import { App } from 'vue'
 
-import TestA from './TestA'
-import TestB from './TestB'
+// import TestA from './TestA'
+// import TestB from './TestB'
 import VcNaiveForm from './VcNaiveForm'
 
 // export * from './VcNaiveForm'
 
-const components = [TestA, TestB, VcNaiveForm]
+const components = [VcNaiveForm]
 
 export function install(app: App) {
   for (const key in components) {
@@ -19,4 +19,4 @@ export default {
   install
 }
 
-export { TestA, TestB, VcNaiveForm }
+export { VcNaiveForm }

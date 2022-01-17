@@ -1,4 +1,4 @@
-import { VcNaiveFormExpose, VcNaiveFormProps } from '@/vc-naive/components/VcNaiveForm/type'
+import { VcNaiveFormExpose, VcNaiveFormProps } from '../type'
 import { effectScope, isRef, onScopeDispose, ref, Ref, unref, watchEffect } from 'vue'
 import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface'
 
