@@ -1,6 +1,5 @@
-import { computed, DefineComponent, defineComponent, PropType } from 'vue'
+import { computed, DefineComponent, defineComponent, PropType, ref, watch } from 'vue'
 import { VcNaiveFormSchema, VcNaiveFormComponentName } from './type'
-// import {Recordable} from "@/interface/global";
 import { componentMap } from './componentMap'
 import { isFunction } from 'lodash-es'
 
@@ -17,7 +16,29 @@ export default defineComponent({
       default: () => ({})
     }
   },
-  setup(props, { attrs }) {
+  emits: ['update:formModelRef'],
+  setup(props, { attrs, emit }) {
+    const modelRef = ref<Record<string, any>>({})
+
+    watch(
+      () => props.formModelRef,
+      (model) => {
+        modelRef.value = model
+      },
+      {
+        immediate: true,
+        deep: true
+      }
+    )
+
+    watch(
+      modelRef,
+      (val: Record<string, any>) => {
+        emit('update:formModelRef', val)
+      },
+      { deep: true }
+    )
+
     const Component = computed((): DefineComponent => {
       const name = props.schema?.component ? props.schema.component : 'NInput'
       return componentMap.get(name) as DefineComponent
@@ -61,7 +82,7 @@ export default defineComponent({
       return (
         <DynamicComponent
           {...{ ...comProps.value, ...attrs }}
-          v-model={[props.formModelRef[props.schema?.field], 'value']}
+          v-model={[modelRef.value[props.schema?.field], 'value']}
           v-slots={comSlots.value}
         />
       )

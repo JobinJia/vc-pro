@@ -1,6 +1,6 @@
 import { App } from 'vue'
 
-import { VcNaiveForm } from './VcNaiveForm'
+import VcNaiveForm from './VcNaiveForm'
 
 const components = [VcNaiveForm]
 

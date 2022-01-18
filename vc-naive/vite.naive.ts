@@ -22,7 +22,7 @@ export default (): UserConfigExport => {
       dts({
         // outputDir: resolve(__dirname, 'types'),
         // root: resolve(__dirname, '../'),
-        outputDir: 'dist',
+        outputDir: 'dist/types',
         exclude: ['node_modules/**', 'naive-ui/**', '**/demo/**'],
         logDiagnostics: true,
         skipDiagnostics: false,

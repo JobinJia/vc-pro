@@ -40,7 +40,9 @@ export interface VcNaiveFormSchema<Name extends VcNaiveFormComponentName> {
   formItemProps?: NaiveGridFormItemProps & Record<string, any>
 }
 
-export function defineSchema<T extends VcNaiveFormComponentName>(schema: VcNaiveFormSchema<T>) {
+export function defineSchema<T extends VcNaiveFormComponentName>(
+  schema: VcNaiveFormSchema<T>
+): VcNaiveFormSchema<T> {
   return schema
 }
 

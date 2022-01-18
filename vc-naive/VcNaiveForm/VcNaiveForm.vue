@@ -1,12 +1,33 @@
 <script lang="ts">
-  import { defineComponent, ref, computed, unref, Ref } from 'vue'
-  import { VcNaiveFormExpose, VcNaiveFormProps } from './type'
+  import { defineComponent, ref, computed, unref, Ref, PropType } from 'vue'
+  import { VcNaiveFormExpose, VcNaiveFormProps, VcNaiveFormSchemas } from './type'
   import { merge, omit } from 'lodash-es'
   import { useNaiveFormModel } from './composables/useNaiveFormModel'
-  import { vcNaiveFormProps } from './props'
   import { NForm, NGrid, NFormItemGi, NSpace } from 'naive-ui'
   import VcNaiveFormItem from './VcNaiveFormItem'
   import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/es/form/src/interface'
+  import type { GridProps } from 'naive-ui'
+
+  const formProps = NForm.props
+  export const vcNaiveFormProps = {
+    ...formProps,
+    schemas: {
+      type: Array as PropType<VcNaiveFormSchemas>
+    },
+    gridProps: {
+      type: Object as PropType<Partial<GridProps>>,
+      default: () =>
+        ({
+          cols: 3,
+          collapsed: false,
+          collapsedRows: 1,
+          responsive: 'screen',
+          itemResponsive: false,
+          xGap: 12,
+          yGap: 0
+        } as GridProps)
+    }
+  }
 
   export default defineComponent({
     name: 'VcNaiveForm',
@@ -95,7 +116,7 @@
         :path="schema.field"
         v-bind="schema?.formItemProps ?? {}"
       >
-        <VcNaiveFormItem :schema="schema" v-model:form-model-ref="modelRef" />
+        <VcNaiveFormItem v-model:form-model-ref="modelRef" :schema="schema" />
       </NFormItemGi>
       <NFormItemGi v-if="$slots.formAction" suffix style="margin-left: auto">
         <NSpace justify="end">
