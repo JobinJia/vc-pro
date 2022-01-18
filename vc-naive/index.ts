@@ -16,15 +16,3 @@ export default {
 }
 
 export { VcNaiveForm }
-
-// types
-
-export type {
-  VcNaiveFormSchema,
-  VcNaiveFormSchemas,
-  NaiveGridFormItemProps,
-  VcNaiveFormEmit,
-  VcNaiveFormExpose,
-  VcNaiveFormProps,
-  VcNaiveFormComponentName
-} from './VcNaiveForm'

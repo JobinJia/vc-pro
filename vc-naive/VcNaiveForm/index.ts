@@ -1,6 +1,10 @@
 import VcNaiveForm from './VcNaiveForm.vue'
 import type { App, Plugin } from 'vue'
 
+import { useNaiveForm } from './composables/useNaiveForm'
+
+import { defineSchema } from './type'
+
 VcNaiveForm.install = function (app: App) {
   app.component(VcNaiveForm.name, VcNaiveForm)
   return app
@@ -8,9 +12,7 @@ VcNaiveForm.install = function (app: App) {
 
 export default VcNaiveForm as typeof VcNaiveForm & Plugin
 
-export { useNaiveForm } from './composables/useNaiveForm'
-
-export { defineSchema } from './type'
+export { useNaiveForm, defineSchema, VcNaiveForm }
 
 export type {
   VcNaiveFormSchema,

@@ -1,9 +1,10 @@
 {
   "name": "@vc-view/vc-naive",
-  "version": "1.0.04",
+  "version": "0.0.5",
   "description": "",
   "main": "./dist/vc-naive.js",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/vc-naive.js",
+  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vc-naive.js"
