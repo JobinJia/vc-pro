@@ -2,8 +2,6 @@ import { App } from 'vue'
 
 import VcNaiveForm from './VcNaiveForm'
 
-export * from './VcNaiveForm'
-
 const components = [VcNaiveForm]
 
 export function install(app: App) {
@@ -18,3 +16,15 @@ export default {
 }
 
 export { VcNaiveForm }
+
+// types
+
+export type {
+  VcNaiveFormSchema,
+  VcNaiveFormSchemas,
+  NaiveGridFormItemProps,
+  VcNaiveFormEmit,
+  VcNaiveFormExpose,
+  VcNaiveFormProps,
+  VcNaiveFormComponentName
+} from './VcNaiveForm'
