@@ -6,7 +6,7 @@
   import { vcNaiveFormProps } from './props'
   import { NForm, NGrid, NFormItemGi, NSpace } from 'naive-ui'
   import VcNaiveFormItem from './VcNaiveFormItem'
-  import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/lib/form/src/interface'
+  import { FormValidateCallback, ShouldRuleBeApplied } from 'naive-ui/es/form/src/interface'
 
   export default defineComponent({
     name: 'VcNaiveForm',

@@ -46,7 +46,7 @@ export function defineSchema<T extends VcNaiveFormComponentName>(schema: VcNaive
 
 export type VcNaiveFormSchemas = VcNaiveFormSchema<VcNaiveFormComponentName>[]
 
-export interface VcNaiveFormProps extends FormProps {
+export interface VcNaiveFormProps extends Omit<FormProps, 'model'> {
   model?: Record<string, any>
   schemas?: VcNaiveFormSchemas
   gridProps?: Partial<GridProps>
