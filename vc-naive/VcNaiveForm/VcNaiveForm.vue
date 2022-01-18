@@ -95,7 +95,7 @@
         :path="schema.field"
         v-bind="schema?.formItemProps ?? {}"
       >
-        <VcNaiveFormItem :schema="schema" :form-model-ref="modelRef" />
+        <VcNaiveFormItem :schema="schema" v-model:form-model-ref="modelRef" />
       </NFormItemGi>
       <NFormItemGi v-if="$slots.formAction" suffix style="margin-left: auto">
         <NSpace justify="end">

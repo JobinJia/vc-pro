@@ -17,8 +17,7 @@ export default defineComponent({
       default: () => ({})
     }
   },
-  emits: ['update:value'],
-  setup(props, { emit, attrs }) {
+  setup(props, { attrs }) {
     const Component = computed((): DefineComponent => {
       const name = props.schema?.component ? props.schema.component : 'NInput'
       return componentMap.get(name) as DefineComponent

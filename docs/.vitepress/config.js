@@ -1,4 +1,5 @@
 const base = process.env.NODE_ENV === 'production' ? '/' : ''
+const { resolve } = require('path')
 
 const sidebar = [
   {
@@ -31,7 +32,8 @@ module.exports = {
     nextLink: true,
     alias: {
       // 'naive-ui': './node_modules/naive-ui',
-      // '@vc-view/vc-naive': './vc-naive/components/'
+      // '@vc-view/vc-naive': './vc-naive/'
+      // '@vc-view/vc-naive': resolve('./vc-naive/')
     },
     locales: {
       '/': {

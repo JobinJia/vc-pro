@@ -1,10 +1,8 @@
 import { App } from 'vue'
 
-// import TestA from './TestA'
-// import TestB from './TestB'
 import VcNaiveForm from './VcNaiveForm'
 
-// export * from './VcNaiveForm'
+export * from './VcNaiveForm'
 
 const components = [VcNaiveForm]
 

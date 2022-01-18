@@ -6,7 +6,6 @@ importers:
     specifiers:
       '@types/lodash': ^4.14.178
       '@types/node': ^17.0.8
-      '@vc-view/docs': workspace:*
       '@vc-view/vc-ant': workspace:*
       '@vc-view/vc-naive': workspace:^1.0.0
       '@vitejs/plugin-vue': ^2.0.1
@@ -27,14 +26,13 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.5.4
       vite: ^2.7.12
-      vite-plugin-dts: 0.9.8
+      vite-plugin-dts: ^0.9.8
       vitepress-for-component: ^0.16.6
       vue: ^3.2.27
       vue-tsc: ^0.29.8
     devDependencies:
       '@types/lodash': 4.14.178
       '@types/node': 17.0.8
-      '@vc-view/docs': link:docs
       '@vc-view/vc-ant': link:vc-ant
       '@vc-view/vc-naive': link:vc-naive
       '@vitejs/plugin-vue': 2.0.1_vite@2.7.12+vue@3.2.27
@@ -59,9 +57,6 @@ importers:
       vitepress-for-component: 0.16.6
       vue: 3.2.27
       vue-tsc: 0.29.8_typescript@4.5.4
-
-  docs:
-    specifiers: {}
 
   vc-ant:
     specifiers: {}
