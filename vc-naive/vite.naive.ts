@@ -23,7 +23,7 @@ export default (): UserConfigExport => {
         // outputDir: resolve(__dirname, 'types'),
         // root: resolve(__dirname, '../'),
         outputDir: 'dist',
-        exclude: ['node_modules/**', 'naive-ui/**'],
+        exclude: ['node_modules/**', 'naive-ui/**', '**/demo/**'],
         logDiagnostics: true,
         skipDiagnostics: false,
         insertTypesEntry: true,
