@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-  import { NRadio } from 'naive-ui'
+import { NRadio, NButton, GridProps } from "naive-ui";
   import { defineSchema, VcNaiveFormSchemas } from '..'
   import VcNaiveForm from '..'
 
@@ -44,7 +44,12 @@
 </script>
 
 <template>
-  <VcNaiveForm :schemas="schemas" />
+  <VcNaiveForm :schemas="schemas" labelPlacement="left">
+    <template #formAction>
+      <NButton type="primary">按钮1</NButton>
+      <NButton type="warning">按钮2</NButton>
+    </template>
+  </VcNaiveForm>
 </template>
 
 <style scoped lang="less"></style>

@@ -61,7 +61,7 @@
         }
       }
     }),
-    {
+    defineSchema({
       field: 'select',
       component: 'NSelect',
       formItemProps: {
@@ -119,8 +119,8 @@
           }
         ]
       }
-    },
-    {
+    }),
+    defineSchema({
       field: 'dateTime',
       component: 'NDatePicker',
       formItemProps: {
@@ -132,8 +132,8 @@
           width: '100%'
         }
       }
-    },
-    {
+    }),
+    defineSchema({
       field: 'dateTimeRange',
       component: 'NDatePicker',
       formItemProps: {
@@ -145,7 +145,7 @@
           width: '100%'
         }
       }
-    }
+    })
   ]
   const { modelRef, methods } = useNaiveForm(
     {
@@ -322,20 +322,23 @@
           </n-input-group>
         </NSpace>
         <NDivider />
-        <VcNaiveForm @register="methods.register" />
-        <NSpace>
-          <NButton type="primary" @click="getFormModel"> 获取model</NButton>
-          <NButton type="primary" @click="updFormValue"> 改变值</NButton>
-          <NButton type="primary" @click="reset"> 重置</NButton>
-          <NButton
-            type="warning"
-            :disabled="modelRef.age === null"
-            round
-            @click="handleValidateButtonClick"
-          >
-            验证
-          </NButton>
-        </NSpace>
+        <VcNaiveForm @register="methods.register">
+          <template #formAction>
+            <NButton type="primary" @click="getFormModel"> 获取model</NButton>
+            <NButton type="primary" @click="updFormValue"> 改变值</NButton>
+            <NButton type="primary" @click="reset"> 重置</NButton>
+            <NButton
+              type="warning"
+              :disabled="modelRef.age === null"
+              round
+              @click="handleValidateButtonClick"
+            >
+              验证
+            </NButton>
+          </template>
+        </VcNaiveForm>
+        <!--        <NSpace>-->
+        <!--        </NSpace>-->
       </NCard>
     </n-message-provider>
   </div>

@@ -1,3 +1,4 @@
 packages:
   - 'vc-naive/**'
   - 'vc-ant/**'
+  - 'vc-composables/**'

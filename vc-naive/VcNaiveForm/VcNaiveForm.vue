@@ -9,6 +9,7 @@
   import type { GridProps } from 'naive-ui'
 
   const formProps = NForm.props
+
   export const vcNaiveFormProps = {
     ...formProps,
     schemas: {
@@ -118,8 +119,8 @@
       >
         <VcNaiveFormItem v-model:form-model-ref="modelRef" :schema="schema" />
       </NFormItemGi>
-      <NFormItemGi v-if="$slots.formAction" suffix style="margin-left: auto">
-        <NSpace justify="end">
+      <NFormItemGi v-if="$slots.formAction" style="margin-left: auto">
+        <NSpace justify="center">
           <slot name="formAction"></slot>
         </NSpace>
       </NFormItemGi>
