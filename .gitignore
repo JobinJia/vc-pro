@@ -4,5 +4,6 @@ dist
 dist-ssr
 *.local
 types/
+es/
 .idea
 .temp
