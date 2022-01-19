@@ -17,6 +17,9 @@ const inputs = inputsArray.reduce((backObj, pkgName) => {
   return backObj
 }, {})
 
+// 添加index.ts
+inputs['index'] = resolve(__dirname, 'index.ts')
+
 export default (): UserConfigExport => {
   return {
     publicDir: false,
@@ -40,7 +43,7 @@ export default (): UserConfigExport => {
     build: {
       cssCodeSplit: true,
       emptyOutDir: false,
-      outDir: 'dist',
+      outDir: 'es',
       // emptyOutDir: true,
       lib: {
         entry: './index.ts',
@@ -54,7 +57,9 @@ export default (): UserConfigExport => {
           globals: {
             vue: 'Vue'
           },
-          entryFileNames: '[name]/index.esm.js',
+          entryFileNames: ({ name }) => {
+            return name === 'index' ? 'index.js' : '[name]/index.js'
+          },
           assetFileNames: '[name]/index.css'
           // file: (name) =>
           // format: 'es',

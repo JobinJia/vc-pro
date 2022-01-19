@@ -1,23 +1,22 @@
 {
   "name": "@vc-view/vc-naive",
-  "version": "0.0.91",
+  "version": "0.0.98",
   "description": "",
   "main": "./dist/vc-naive.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./es/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vc-naive.js"
+      "import": "./dist/vc-naive.js",
+      "types": "./index.d.ts"
     },
     "./dist/style.css": {
       "import": "./dist/style.css"
     },
-    "./dist/": {
-      "import": "./dist/"
-    }
+    "./*": "./*"
   },
   "files": [
     "dist",
-    "types",
+    "es",
     "README.md",
     "package.json",
     "LICENSE"
@@ -27,7 +26,7 @@
     "build:naive": "pnpm run clean:naive && pnpm run build:naive-all && pnpm run build:naive-esm",
     "build:naive-all": "vite build --config vite.naive.ts",
     "build:naive-esm": "vite build --config vite.naive.esm.ts",
-    "clean:naive": "rimraf dist",
+    "clean:naive": "rimraf dist && rimraf es",
     "publish:vc-naive": "npm publish --access public",
     "unpublish:vc-naive": "npm unpublish vc-view --force",
     "tsc:naive": "vue-tsc --noEmit"

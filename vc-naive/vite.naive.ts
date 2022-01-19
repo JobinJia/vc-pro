@@ -22,11 +22,11 @@ export default (): UserConfigExport => {
       dts({
         // outputDir: resolve(__dirname, 'types'),
         // root: resolve(__dirname, '../'),
-        outputDir: 'dist/types',
+        outputDir: 'es',
         exclude: ['node_modules/**', 'naive-ui/**', '**/demo/**'],
         logDiagnostics: true,
         skipDiagnostics: false,
-        insertTypesEntry: true,
+        insertTypesEntry: false,
         beforeWriteFile(filePath, content) {
           // filePath = filePath.replace(/[\\/]packages[\\/]/g, '/')
           // content = content.replace(/.[\\/]packages[\\/]/g, './')
