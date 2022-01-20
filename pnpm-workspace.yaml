@@ -1,4 +1,5 @@
 packages:
+  - 'shared/**'
   - 'vc-naive/**'
   - 'vc-ant/**'
   - 'vc-composables/**'

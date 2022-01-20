@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "sourceMap": false,
+    "declaration": true
+  },
+  "exclude": ["node_modules", "vite.hooks.ts", "dist"]
+}

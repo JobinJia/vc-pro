@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vite build --config vite.hooks.ts",
+    "clean:hooks": "rimraf dist",
+    "tsc:hooks": "vue-tsc --noEmit",
+    "build:hooks-type": "tsc -d",
+    "build:hooks": "pnpm run clean:hooks && pnpm run tsc:hooks && pnpm run build:hooks-type && vite build --config vite.hooks.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@vc-view/shared": "workspace:*"
+  }
 }
