@@ -1,8 +1,15 @@
 {
   "name": "@vc-view/composables",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/composables.es.js",
+      "require": "./dist/composables.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "test": "vite build --config vite.hooks.ts",
     "clean:hooks": "rimraf dist",
