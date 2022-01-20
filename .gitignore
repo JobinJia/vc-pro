@@ -7,3 +7,4 @@ types/
 es/
 .idea
 .temp
+.pnpm-debug.log

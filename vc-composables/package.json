@@ -1,5 +1,5 @@
 {
-  "name": "@vc-view/composables",
+  "name": "@vc-view/vc-composables",
   "version": "0.0.1",
   "description": "",
   "exports": {
@@ -11,11 +11,11 @@
     "./*": "./*"
   },
   "scripts": {
-    "test": "vite build --config vite.hooks.ts",
     "clean:hooks": "rimraf dist",
     "tsc:hooks": "vue-tsc --noEmit",
     "build:hooks-type": "tsc -d",
-    "build:hooks": "pnpm run clean:hooks && pnpm run tsc:hooks && pnpm run build:hooks-type && vite build --config vite.hooks.ts"
+    "build:hooks": "pnpm run clean:hooks && pnpm run tsc:hooks && pnpm run build:hooks-type && vite build --config vite.hooks.ts",
+    "publish:vc-composables": "npm publish --access public"
   },
   "keywords": [],
   "author": "",

@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.178",
     "@types/node": "^17.0.8",
-    "@vc-view/composables": "workspace:*",
+    "@vc-view/vc-composables": "workspace:*",
     "@vc-view/shared": "workspace:*",
     "@vc-view/vc-ant": "workspace:*",
     "@vc-view/vc-naive": "workspace:*",
