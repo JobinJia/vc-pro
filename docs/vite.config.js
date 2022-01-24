@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@vc-view/vc-naive',
+        find: '@vc-pro/vc-naive',
         replacement: resolve(__dirname, '../vc-naive/')
       }
     ]

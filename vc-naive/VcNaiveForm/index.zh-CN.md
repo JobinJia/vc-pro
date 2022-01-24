@@ -33,7 +33,7 @@ desc="点击切换。"> </demo>
 ## API
 
 ```ts
-import { NaiveBasicForm } from '@vc-view/vc-naive'
+import { NaiveBasicForm } from '@vc-pro/vc-naive'
 ```
 
 ## Props

@@ -1,5 +1,5 @@
 {
-  "name": "@vc-view/vc-composables",
+  "name": "@vc-pro/vc-composables",
   "version": "0.0.1",
   "description": "",
   "exports": {
@@ -21,6 +21,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@vc-view/shared": "workspace:*"
+    "@vc-pro/shared": "workspace:*"
   }
 }

@@ -1,7 +1,7 @@
 import { effectScope, onScopeDispose, ref, Ref, unref, UnwrapRef, watch, watchEffect } from 'vue'
 import { isFunction, merge, omit } from 'lodash-es'
-import { containsProp } from '@vc-view/shared/utils'
-import { MaybeRef } from '@vc-view/shared/interface'
+import { containsProp } from '@vc-pro/shared/utils'
+import { MaybeRef } from '@vc-pro/shared/interface'
 
 /**
  * useFetch(api, params, config)

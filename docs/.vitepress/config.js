@@ -19,26 +19,26 @@ const sidebar = [
 ]
 
 module.exports = {
-  title: 'Vc-View',
+  title: 'vc-pro',
   description: 'UI Component Plus',
   srcIncludes: ['./vc-naive'],
   base,
   themeConfig: {
     lang: 'zh-CN',
     lastUpdated: '最近更新',
-    repo: 'JobinJia/vc-view',
+    repo: 'JobinJia/vc-pro',
     repoLabel: 'Github',
     prevLink: true,
     nextLink: true,
     alias: {
       // 'naive-ui': './node_modules/naive-ui',
-      // '@vc-view/vc-naive': './vc-naive/'
-      // '@vc-view/vc-naive': resolve('./vc-naive/')
+      // '@vc-pro/vc-naive': './vc-naive/'
+      // '@vc-pro/vc-naive': resolve('./vc-naive/')
     },
     locales: {
       '/': {
         lang: 'zh-CN',
-        title: 'vc-view',
+        title: 'vc-pro',
         description: 'vue hooks',
         label: '中文',
         selectText: 'Languages',

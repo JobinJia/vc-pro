@@ -1,5 +1,5 @@
 import { inject, InjectionKey, provide, readonly, ref, unref, watch } from 'vue'
-import { MaybeRef } from '@vc-view/shared/dist/interface'
+import { MaybeRef } from '@vc-pro/shared/dist/interface'
 import { merge } from 'lodash-es'
 
 export type SetState<T> = (payload: Partial<T>) => void

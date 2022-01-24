@@ -1,5 +1,5 @@
 {
-  "name": "@vc-view/vc-naive",
+  "name": "@vc-pro/vc-naive",
   "version": "0.0.1",
   "description": "",
   "main": "./dist/vc-naive.js",
@@ -28,7 +28,7 @@
     "build:naive-esm": "vite build --config vite.naive.esm.ts",
     "clean:naive": "rimraf dist && rimraf es",
     "publish:vc-naive": "npm publish --access public",
-    "unpublish:vc-naive": "npm unpublish vc-view --force",
+    "unpublish:vc-naive": "npm unpublish vc-pro --force",
     "tsc:naive": "vue-tsc --noEmit"
   },
   "peerDependencies": {

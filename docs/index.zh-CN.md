@@ -15,11 +15,11 @@ naive-ui, ant-design-vue, element 二次封装组件，
 针对不同的组件，提供不同的包
 ```
 // naive-ui
-pnpm install @vc-view/naive-ui
+pnpm install @vc-pro/naive-ui
 // ant-design-vue
-pnpm install @vc-view/ant-design-vue
+pnpm install @vc-pro/ant-design-vue
 // element-plus
-pnpm install @vc-view/element-plus
+pnpm install @vc-pro/element-plus
 ```
 
 ## 使用
