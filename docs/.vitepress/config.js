@@ -1,5 +1,4 @@
 const base = process.env.NODE_ENV === 'production' ? '/' : ''
-const { resolve } = require('path')
 
 const sidebar = [
   {
@@ -14,6 +13,15 @@ const sidebar = [
           }
         ]
       },
+      {
+        text: 'vc-ant',
+        children: [
+          {
+            text: 'form',
+            link: '/components/vc-ant/form/'
+          }
+        ]
+      }
     ]
   }
 ]
@@ -21,7 +29,7 @@ const sidebar = [
 module.exports = {
   title: 'vc-pro',
   description: 'UI Component Plus',
-  srcIncludes: ['./vc-naive'],
+  srcIncludes: ['./vc-naive', './vc-ant'],
   base,
   themeConfig: {
     lang: 'zh-CN',

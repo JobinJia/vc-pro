@@ -12,6 +12,9 @@
 
   export const vcNaiveFormProps = {
     ...formProps,
+    model: {
+      type: Object as PropType<VcNaiveFormProps['model']>
+    },
     schemas: {
       type: Array as PropType<VcNaiveFormSchemas>
     },

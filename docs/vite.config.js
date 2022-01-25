@@ -9,6 +9,10 @@ export default defineConfig({
       {
         find: '@vc-pro/vc-naive',
         replacement: resolve(__dirname, '../vc-naive/')
+      },
+      {
+        find: '@vc-pro/vc-ant',
+        replacement: resolve(__dirname, '../vc-ant/')
       }
     ]
   }
