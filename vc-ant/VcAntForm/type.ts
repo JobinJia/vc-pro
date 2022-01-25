@@ -9,12 +9,21 @@ import type {
   TimePickerProps,
   TimeRangePickerProps,
   RateProps,
-  TransferProps
+  TransferProps,
+  TreeProps,
+  SliderProps,
+  RadioProps,
+  RadioGroupProps,
+  MentionsProps,
+  CascaderProps,
+  AutoCompleteProps,
+  FormItemProps
 } from 'ant-design-vue'
 import { InputProps } from 'ant-design-vue/es/input/inputProps'
-import { VNode } from 'vue'
+import { Slots, VNode } from 'vue'
 
-export interface VcAntRunTimeComponentType {
+// todo upload
+export interface VcAntComponentMap {
   AInput: InputProps
   AInputNumber: InputNumberProps
   ASelect: SelectProps
@@ -26,37 +35,22 @@ export interface VcAntRunTimeComponentType {
   ATimeRange: TimeRangePickerProps
   ARate: RateProps
   ATransfer: TransferProps
+  ATree: TreeProps
+  ASlider: SliderProps
+  ARadio: RadioProps
+  ARadioGroup: RadioGroupProps
+  AMentions: MentionsProps
+  ACascader: CascaderProps
+  AAutoComplete: AutoCompleteProps
   Slots: VNode
 }
 
-export type VcAntFormComponentName = keyof VcAntRunTimeComponentType
+export type VcAntFormComponentName = keyof VcAntComponentMap
 
-export type ComponentProps<T> = T extends VcAntFormComponentName
-  ? VcAntRunTimeComponentType[T]
-  : never
-
-export interface AntFormSchema {
+export interface AntFormSchema<Name extends VcAntFormComponentName> {
   field: string
-  component: VcAntFormComponentName
-  formItemProps: FormProps
-  componentProps: ComponentProps<VcAntFormComponentName>
+  component?: Name
+  formItemProps?: FormItemProps & { [key: string]: any }
+  componentProps?: VcAntComponentMap[Name]
+  componentSlots?: (() => Slots | HTMLElement) | Slots
 }
-
-// export interface VcNaiveFormProps extends FormProps {
-//   model?: Recordable
-//   schemas?: AntFormSchema[]
-//   gridProps?: Partial<GridProps>
-// }
-
-// export interface VcNaiveFormExpose {
-//   values: Ref<Recordable>
-//   updFormProps: (formProps?: Partial<VcNaiveFormProps>) => void
-//   getFormValue: () => Recordable
-//   updFormValue: (updModel: Recordable) => void
-//   validate: (args?: any) => Promise<any>
-//   restoreValidation: () => void
-// }
-
-// export interface VcNaiveFormEmit {
-//   (e: 'register-form', expose?: VcNaiveFormExpose): void
-// }

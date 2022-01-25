@@ -14,9 +14,20 @@ import type {
   CheckboxProps,
   DatePickerProps,
   FormProps,
-  GridProps
+  GridProps,
+  AutoCompleteProps,
+  CascaderProps,
+  InputNumberProps,
+  MentionProps,
+  RateProps,
+  SliderProps,
+  SwitchProps,
+  TimePickerProps,
+  TransferProps,
+  TreeSelectProps
 } from 'naive-ui'
 
+// todo add upload
 export interface VcNaiveFormComponentMap {
   NInput: InputProps | Record<string, any>
   NSelect: SelectProps | Record<string, any>
@@ -25,7 +36,17 @@ export interface VcNaiveFormComponentMap {
   NCheckbox: CheckboxProps | Record<string, any>
   NDatePicker: DatePickerProps | Record<string, any>
   NRadioGroup: RadioGroupProps | Record<string, any>
-  Slot: () => Slots
+  NAutoComplete: AutoCompleteProps | Record<string, any>
+  NCascader: CascaderProps | Record<string, any>
+  NInputNumber: InputNumberProps | Record<string, any>
+  NMention: MentionProps | Record<string, any>
+  NRate: RateProps | Record<string, any>
+  NSlider: SliderProps | Record<string, any>
+  NSwitch: SwitchProps | Record<string, any>
+  NTimePicker: TimePickerProps | Record<string, any>
+  NTransfer: TransferProps | Record<string, any>
+  NTreeSelect: TreeSelectProps | Record<string, any>
+  Slot: () => Slots | (() => Slots)
 }
 
 export type NaiveGridFormItemProps = Partial<FormItemProps & GridItemProps>

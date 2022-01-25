@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 import * as fs from 'fs'
 
-const inputDir = resolve(__dirname, './components')
+const inputDir = resolve(__dirname, './')
 
 const inputsArray = fs.readdirSync(inputDir).filter((name) => {
   const componentDir = resolve(inputDir, name)
@@ -13,9 +13,12 @@ const inputsArray = fs.readdirSync(inputDir).filter((name) => {
 })
 
 const inputs = inputsArray.reduce((backObj, pkgName) => {
-  backObj[pkgName] = resolve(__dirname, `./components/${pkgName}/index.ts`)
+  backObj[pkgName] = resolve(__dirname, `./${pkgName}/index.ts`)
   return backObj
 }, {})
+
+// 添加index.ts
+inputs['index'] = resolve(__dirname, 'index.ts')
 
 export default (): UserConfigExport => {
   return {
@@ -39,12 +42,13 @@ export default (): UserConfigExport => {
     plugins: [vue(), vueJsx()],
     build: {
       cssCodeSplit: true,
-      outDir: 'dist/es',
+      emptyOutDir: false,
+      outDir: 'es',
       // emptyOutDir: true,
       lib: {
-        entry: 'components/index.ts',
+        entry: './index.ts',
         // entry: '',
-        name: 'vc-ant.esm',
+        name: 'vc-naive.esm',
         formats: ['es']
       },
       rollupOptions: {
@@ -53,12 +57,14 @@ export default (): UserConfigExport => {
           globals: {
             vue: 'Vue'
           },
-          entryFileNames: 'components/[name]/index.esm.js',
-          assetFileNames: 'components/[name]/index.css'
+          entryFileNames: ({ name }) => {
+            return name === 'index' ? 'index.js' : '[name]/index.js'
+          },
+          assetFileNames: '[name]/index.css'
           // file: (name) =>
           // format: 'es',
         },
-        external: ['vue', 'ant-design-vue', 'lodash-es']
+        external: ['vue', 'naive-ui', 'lodash-es']
       }
     }
   }

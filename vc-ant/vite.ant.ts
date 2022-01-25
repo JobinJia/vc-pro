@@ -5,7 +5,6 @@ import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
 export default (): UserConfigExport => {
-  console.log(resolve(__dirname, '../'))
   return {
     publicDir: false,
     // root: resolve(__dirname, './'),
@@ -23,15 +22,14 @@ export default (): UserConfigExport => {
       dts({
         // outputDir: resolve(__dirname, 'types'),
         // root: resolve(__dirname, '../'),
-        outputDir: 'dist/types',
-        exclude: ['node_modules/**', 'naive-ui/**'],
+        outputDir: 'es',
+        exclude: ['node_modules/**', 'naive-ui/**', '**/demo/**', '../shim.d.ts'],
         logDiagnostics: true,
         skipDiagnostics: false,
-        // tsConfigFilePath: resolve(__dirname, '../../tsconfig.json'),
-        // insertTypesEntry: true,
+        insertTypesEntry: false,
         beforeWriteFile(filePath, content) {
-          filePath = filePath.replace(/[\\/]packages[\\/]/g, '/')
-          content = content.replace(/.[\\/]packages[\\/]/g, './')
+          // filePath = filePath.replace(/[\\/]packages[\\/]/g, '/')
+          // content = content.replace(/.[\\/]packages[\\/]/g, './')
           return { filePath, content }
         }
       })
@@ -41,9 +39,9 @@ export default (): UserConfigExport => {
       outDir: 'dist',
       // emptyOutDir: true,
       lib: {
-        entry: resolve(__dirname, 'components/index.ts'),
-        // entry: 'components/index.ts',
-        name: 'vc-components',
+        entry: resolve(__dirname, 'index.ts'),
+        // entry: 'index.ts',
+        name: 'vc-naive',
         formats: ['es'],
         fileName: (name) => `vc-naive.js`
       },
@@ -53,7 +51,7 @@ export default (): UserConfigExport => {
             vue: 'Vue'
           }
         },
-        external: ['vue', 'ant-design-vue', 'lodash-es']
+        external: ['vue', 'naive-ui', 'lodash-es']
       }
     }
   }
