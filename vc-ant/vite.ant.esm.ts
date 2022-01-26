@@ -48,7 +48,7 @@ export default (): UserConfigExport => {
       lib: {
         entry: './index.ts',
         // entry: '',
-        name: 'vc-naive.esm',
+        name: 'vc-ant',
         formats: ['es']
       },
       rollupOptions: {
@@ -64,7 +64,7 @@ export default (): UserConfigExport => {
           // file: (name) =>
           // format: 'es',
         },
-        external: ['vue', 'naive-ui', 'lodash-es']
+        external: ['vue', 'ant-design-vue', 'lodash-es']
       }
     }
   }

@@ -3,39 +3,43 @@
   "version": "0.0.11",
   "description": "",
   "main": "./dist/vc-ant.js",
-  "types": "./dist/types/components/index.d.ts",
+  "types": "./es/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vc-ant.js"
+      "import": "./dist/vc-ant.js",
+      "types": "./es/index.d.ts"
     },
     "./dist/style.css": {
       "import": "./dist/style.css"
     },
-    "./dist/": {
-      "import": "./dist/es/components/"
-    }
+    "./*": "./*"
   },
   "files": [
     "dist",
+    "es",
     "README.md",
     "package.json",
     "LICENSE"
   ],
   "scripts": {
     "tsc:ant": "vue-tsc --noEmit",
-    "clean:ant": "rimraf dist",
+    "clean:ant": "rimraf dist && rimraf es",
     "build:ant": "pnpm run clean:ant && pnpm run build:ant-all && pnpm run build:ant-esm",
-    "build:ant-all": "vite build --config vite.ant.ts",
+    "build:ant-all": "pnpm run clean:ant && vite build --config vite.ant.ts",
     "build:ant-esm": "vite build --config vite.ant.esm.ts",
     "publish:vc-ant": "npm publish --access public",
     "unpublish:vc-ant": "npm unpublish vc-ant --force"
   },
   "peerDependencies": {
-    "ant-design-vue": "^3.0.0-beta.5",
+    "ant-design-vue": "^3.0.0-beta.8",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.26"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "scroll-into-view-if-needed": "^2.2.28",
+    "vue-types": "^4.1.1"
+  }
 }

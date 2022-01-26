@@ -1,4 +1,4 @@
-import type {
+import {
   FormProps,
   SelectProps,
   CheckboxProps,
@@ -7,7 +7,7 @@ import type {
   InputNumberProps,
   DatePickerProps,
   TimePickerProps,
-  TimeRangePickerProps,
+  // TimeRangePickerProps,
   RateProps,
   TransferProps,
   TreeProps,
@@ -21,7 +21,6 @@ import type {
 } from 'ant-design-vue'
 import { InputProps } from 'ant-design-vue/es/input/inputProps'
 import { Slots, VNode } from 'vue'
-import { VcNaiveFormSchemas } from "@/vc-naive/VcNaiveForm";
 
 // todo upload
 export interface VcAntComponentMap {
@@ -33,7 +32,7 @@ export interface VcAntComponentMap {
   ATreeSelect: TreeSelectProps | Record<string, any>
   ADatePicker: DatePickerProps | Record<string, any>
   ATimePicker: TimePickerProps | Record<string, any>
-  ATimeRange: TimeRangePickerProps | Record<string, any>
+  // ATimeRange: TimeRangePickerProps | Record<string, any>
   ARate: RateProps | Record<string, any>
   ATransfer: TransferProps | Record<string, any>
   ATree: TreeProps | Record<string, any>
@@ -48,21 +47,23 @@ export interface VcAntComponentMap {
 
 export type VcAntFormComponentName = keyof VcAntComponentMap
 
-export interface AntFormSchema<Name extends VcAntFormComponentName> {
+export interface VcAntFormSchema<Name extends VcAntFormComponentName> {
   field: string
   component?: Name
-  formItemProps?: FormItemProps & Record<string, any>
+  formItemProps?: FormItemProps | Record<string, any>
   componentProps?: VcAntComponentMap[Name]
   componentSlots?: (() => Slots | HTMLElement) | Slots
 }
 
 export function defineSchema<T extends VcAntFormComponentName>(
-  schema: AntFormSchema<T>
-): AntFormSchema<T> {
+  schema: VcAntFormSchema<T>
+): VcAntFormSchema<T> {
   return schema
 }
 
+export type VcAntFormSchemas = VcAntFormSchema<VcAntFormComponentName>[]
+
 export interface VcAntFormProps extends Omit<FormProps, 'model'> {
   model?: Record<string, any>
-  schemas?: VcNaiveFormSchemas
+  schemas?: VcAntFormSchemas
 }

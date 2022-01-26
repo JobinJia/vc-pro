@@ -21,9 +21,9 @@ export default (): UserConfigExport => {
       vueJsx(),
       dts({
         // outputDir: resolve(__dirname, 'types'),
-        // root: resolve(__dirname, '../'),
+        // root: resolve(__dirname, './'),
         outputDir: 'es',
-        exclude: ['node_modules/**', 'naive-ui/**', '**/demo/**', '../shim.d.ts'],
+        exclude: ['node_modules/**', '../shim.d.ts'],
         logDiagnostics: true,
         skipDiagnostics: false,
         insertTypesEntry: false,
@@ -41,9 +41,9 @@ export default (): UserConfigExport => {
       lib: {
         entry: resolve(__dirname, 'index.ts'),
         // entry: 'index.ts',
-        name: 'vc-naive',
+        name: 'vc-ant',
         formats: ['es'],
-        fileName: (name) => `vc-naive.js`
+        fileName: (name) => `vc-ant.js`
       },
       rollupOptions: {
         output: {
@@ -51,7 +51,7 @@ export default (): UserConfigExport => {
             vue: 'Vue'
           }
         },
-        external: ['vue', 'naive-ui', 'lodash-es']
+        external: ['vue', 'ant-design-vue', 'lodash-es']
       }
     }
   }

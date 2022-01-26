@@ -1,17 +1,16 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"],
-      "naive-ui": ["node_modules/ant-design-vue/"]
-    }
+    "preserveSymlinks": true,
+    "allowJs": false
   },
   "include": [
-    "components/**/*.ts",
-    "components/**/*.d.ts",
-    "components/**/*.tsx",
-    "components/**/*.vue",
-    "../shared/**/*.ts",
-    "../shared/**/*.d.ts"
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue",
+    "../shim.d.ts"
+  ],
+  "exclude": [
   ]
 }

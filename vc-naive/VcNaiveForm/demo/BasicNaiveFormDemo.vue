@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { NRadio, NButton, GridProps } from "naive-ui";
+  import { NRadio, NButton } from 'naive-ui'
   import { defineSchema, VcNaiveFormSchemas } from '..'
   import VcNaiveForm from '..'
 
