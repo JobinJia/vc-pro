@@ -1,5 +1,5 @@
-import { computed, defineComponent, PropType } from "vue";
-import { createVcNaiveContext } from "@/vc-naive/VcNaiveProvider/composables/useVcNaiveProvider";
+import { computed, defineComponent, PropType } from 'vue'
+import { createVcNaiveContext } from '@/vc-naive/VcNaiveProvider/composables/useVcNaiveProvider'
 
 export interface VcNaiveProviderProps {
   config: {
